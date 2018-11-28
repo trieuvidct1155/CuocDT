@@ -60,7 +60,7 @@ namespace QuanLyPhongKham.Winform
                     break;
 
                 case 3:
-                    fTiepNhanBenhNhan tiepNhanBenhNhan = new fTiepNhanBenhNhan(taiKhoan);
+                    MainFormCuocDT tiepNhanBenhNhan = new MainFormCuocDT(taiKhoan);
                     Hide();
                     tiepNhanBenhNhan.ShowDialog();
                     Show();
