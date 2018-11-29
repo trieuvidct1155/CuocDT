@@ -27,8 +27,6 @@ namespace QuanLyPhongKham.Model.DTO
 
         public LoaiCuoc() { }
 
-
-
         public DateTime TG_BatDau { get; set; }
         public DateTime TG_KetThuc { get; set; }
         public decimal GiaCuoc { get; set; }

@@ -35,6 +35,7 @@ namespace QuanLyPhongKham.Winform
             this.dgvdsthuoc = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdsthuoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@ namespace QuanLyPhongKham.Winform
             // btntimkiem
             // 
             this.btntimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntimkiem.Location = new System.Drawing.Point(352, 32);
+            this.btntimkiem.Location = new System.Drawing.Point(290, 32);
             this.btntimkiem.Name = "btntimkiem";
             this.btntimkiem.Size = new System.Drawing.Size(78, 25);
             this.btntimkiem.TabIndex = 42;
@@ -64,7 +65,7 @@ namespace QuanLyPhongKham.Winform
             this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttimkiem.Location = new System.Drawing.Point(141, 33);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(189, 22);
+            this.txttimkiem.Size = new System.Drawing.Size(130, 22);
             this.txttimkiem.TabIndex = 41;
             // 
             // dgvdsthuoc
@@ -105,18 +106,29 @@ namespace QuanLyPhongKham.Winform
             this.button2.Text = "Chọn";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // fTimKiemThuoc
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(385, 32);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(78, 25);
+            this.button3.TabIndex = 46;
+            this.button3.Text = "Tạo mới";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // MainTimKiemSIM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 346);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btntimkiem);
             this.Controls.Add(this.txttimkiem);
             this.Controls.Add(this.dgvdsthuoc);
-            this.Name = "fTimKiemThuoc";
+            this.Name = "MainTimKiemSIM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tim Kiem Thuoc";
             this.Load += new System.EventHandler(this.fTimKiemThuoc_Load);
@@ -133,5 +145,6 @@ namespace QuanLyPhongKham.Winform
         private System.Windows.Forms.DataGridView dgvdsthuoc;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

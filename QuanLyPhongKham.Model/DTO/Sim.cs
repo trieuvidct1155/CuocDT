@@ -9,32 +9,26 @@ namespace QuanLyPhongKham.Model.DTO
 {
     class Sim
     {
-        public Sim(int maHD, int maSim, DateTime tgDK, decimal chiPhi, int maKH)
+        public Sim(int maSim, long soSim, bool status)
         {
-            MaHD = maHD;
             MaSim = maSim;
-            TG_DangKy = tgDK;
-            ChiPhi = chiPhi;
-            MaKH = maKH;
+            SoSim = soSim;
+            Status = status;
         }
 
         public Sim(DataRow row)
         {
-            MaHD = (int)row["MAHD"];
             MaSim = (int)row["MaSim"];
-            TG_DangKy = (DateTime)row["TG_DangKy"];
-            ChiPhi = (decimal)row["ChiPhi"];
-            MaKH = (int)row["MaKH"];
+            SoSim = (long)row["SoSim"];
+            Status = (bool)row["Status"];
         }
 
         public Sim() { }
 
 
 
-        public int MaHD { get; set; }
         public int MaSim { get; set; }
-        public DateTime TG_DangKy { get; set; }
-        public decimal ChiPhi { get; set; }
-        public int MaKH { get; set; }
+        public long SoSim { get; set; }
+        public bool Status { get; set; }
     }
 }

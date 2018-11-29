@@ -35,15 +35,24 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCapNhatBenhNhan = new System.Windows.Forms.Button();
             this.btnThemBenhNhan = new System.Windows.Forms.Button();
             this.dgvDanhSachBenhNhan = new System.Windows.Forms.DataGridView();
+            this.isChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxTimKiemBenhNhan = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnTimKiemBenhNhan = new System.Windows.Forms.Button();
             this.txtTimKiemBenhNhan = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCapNhatPhieuKham = new System.Windows.Forms.Button();
             this.btnHuyKham = new System.Windows.Forms.Button();
@@ -63,6 +72,12 @@
             this.btnTimKiemPhieuKham = new System.Windows.Forms.Button();
             this.txtTimKiemPhieuKham = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,20 +86,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.isChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -96,7 +97,6 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button10 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -184,6 +184,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách bệnh nhân";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(758, 26);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(190, 25);
+            this.button6.TabIndex = 37;
+            this.button6.Text = "Thông tin thanh toán";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(954, 26);
@@ -241,6 +250,55 @@
             this.dgvDanhSachBenhNhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachBenhNhan.Size = new System.Drawing.Size(1315, 465);
             this.dgvDanhSachBenhNhan.TabIndex = 35;
+            // 
+            // isChecked
+            // 
+            this.isChecked.HeaderText = "";
+            this.isChecked.Name = "isChecked";
+            this.isChecked.ReadOnly = true;
+            this.isChecked.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.isChecked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Mã KH";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 115;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Họ tên";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 200;
+            // 
+            // ngheNghiep
+            // 
+            this.ngheNghiep.HeaderText = "Nghề/Chức vụ";
+            this.ngheNghiep.Name = "ngheNghiep";
+            this.ngheNghiep.ReadOnly = true;
+            this.ngheNghiep.Width = 200;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Số CMND";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Địa chỉ";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.Width = 400;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Trạng thái thanh toán";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Width = 180;
             // 
             // cbxTimKiemBenhNhan
             // 
@@ -304,6 +362,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thanh toán hàng tháng";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(1033, 4);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(121, 25);
+            this.button10.TabIndex = 45;
+            this.button10.Text = "Import file log";
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -490,6 +557,65 @@
             this.tabPage3.Text = "Quản lí SIM";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(622, 13);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 25);
+            this.button3.TabIndex = 41;
+            this.button3.Text = "Chỉnh sửa thông tin";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(495, 13);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(121, 25);
+            this.button4.TabIndex = 40;
+            this.button4.Text = "Tạo mới";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã bệnh nhân",
+            "Họ tên",
+            "Số điện thoại",
+            "Số CMND"});
+            this.comboBox1.Location = new System.Drawing.Point(102, 14);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(110, 24);
+            this.comboBox1.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 16);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Tìm kiếm theo";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(414, 13);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 25);
+            this.button5.TabIndex = 39;
+            this.button5.Text = "Tìm kiếm";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(218, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 22);
+            this.textBox1.TabIndex = 38;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -565,123 +691,6 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 110;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(622, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 25);
-            this.button3.TabIndex = 41;
-            this.button3.Text = "Chỉnh sửa thông tin";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(495, 13);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 25);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "Tạo mới";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Tất cả",
-            "Mã bệnh nhân",
-            "Họ tên",
-            "Số điện thoại",
-            "Số CMND"});
-            this.comboBox1.Location = new System.Drawing.Point(102, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(110, 24);
-            this.comboBox1.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 16);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Tìm kiếm theo";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(414, 13);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 25);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "Tìm kiếm";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(218, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 38;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(758, 26);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(190, 25);
-            this.button6.TabIndex = 37;
-            this.button6.Text = "Thông tin thanh toán";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // isChecked
-            // 
-            this.isChecked.HeaderText = "";
-            this.isChecked.Name = "isChecked";
-            this.isChecked.ReadOnly = true;
-            this.isChecked.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.isChecked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Mã KH";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 115;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Họ tên";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 200;
-            // 
-            // ngheNghiep
-            // 
-            this.ngheNghiep.HeaderText = "Nghề/Chức vụ";
-            this.ngheNghiep.Name = "ngheNghiep";
-            this.ngheNghiep.ReadOnly = true;
-            this.ngheNghiep.Width = 200;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Số CMND";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Địa chỉ";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 400;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Trạng thái thanh toán";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 180;
             // 
             // tabPage4
             // 
@@ -790,15 +799,6 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Width = 110;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(1043, 5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(121, 25);
-            this.button10.TabIndex = 45;
-            this.button10.Text = "Import file log";
-            this.button10.UseVisualStyleBackColor = true;
             // 
             // MainFormCuocDT
             // 
