@@ -50,15 +50,10 @@
     <Compile Include="DTO\LoaiCuoc.cs" />
     <Compile Include="DTO\Sim.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="Interfaces\IThanhToanRepository.cs" />
     <Compile Include="Interfaces\IKhachHangRepository.cs" />
     <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
-    <Compile Include="Interfaces\IBenhNhanRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI_DTO\ChiTietThuocGUI.cs" />
-    <Compile Include="UI_DTO\DichVuCLSGUI.cs" />
-    <Compile Include="UI_DTO\DonThuocGUI.cs" />
-    <Compile Include="UI_DTO\PhieuKhamGUI.cs" />
-    <Compile Include="UI_DTO\ThuocGUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

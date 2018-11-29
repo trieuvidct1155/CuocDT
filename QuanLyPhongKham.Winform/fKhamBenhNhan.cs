@@ -359,7 +359,7 @@ namespace QuanLyPhongKham.Winform
         }
         private void tsmi_lichsulamviec_Click(object sender, EventArgs e)
         {
-            fLichSuKhamBacSi f = new fLichSuKhamBacSi(manv);
+            MainHoaDonHangThang f = new MainHoaDonHangThang(manv);
             f.Load_fLichSuKhamBacSi();
             f.ShowDialog();
             if (f.maphieu != 0 && f.tenbn != null)
@@ -459,7 +459,7 @@ namespace QuanLyPhongKham.Winform
         }
         private void btntimthuoc_Click(object sender, EventArgs e)
         {
-            fTimKiemThuoc f = new fTimKiemThuoc();
+            MainTimKiemSIM f = new MainTimKiemSIM();
             f.ShowDialog();
             Show();
             txtchonthuoc.Text = Convert.ToString(f.mathuoctkt);
@@ -468,7 +468,7 @@ namespace QuanLyPhongKham.Winform
         }
         private void btnchonthuoc_Click(object sender, EventArgs e)
         {
-            fTimKiemThuoc f = new fTimKiemThuoc();
+            MainTimKiemSIM f = new MainTimKiemSIM();
             try
             {
                 int soluong = int.Parse(txtsoluongthuoc.Text);

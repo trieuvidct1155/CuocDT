@@ -354,5 +354,25 @@ namespace QuanLyPhongKham.Winform
         {
 
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxTimKiemBenhNhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTimKiemBenhNhan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

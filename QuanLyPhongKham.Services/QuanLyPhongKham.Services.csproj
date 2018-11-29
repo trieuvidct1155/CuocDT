@@ -59,10 +59,6 @@
       <Project>{c65934fe-6246-4391-a9aa-55dbac3287db}</Project>
       <Name>QuanLyPhongKham.Repository.ADO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QuanLyPhongKham.Repository.EF\QuanLyPhongKham.Repository.EF.csproj">
-      <Project>{87f4267a-2d65-463a-b090-e1ab7df6e142}</Project>
-      <Name>QuanLyPhongKham.Repository.EF</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

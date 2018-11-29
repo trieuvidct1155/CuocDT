@@ -23,7 +23,7 @@ namespace QuanLyPhongKham.Services
         {
         }
 
-        internal LibraryService(IBenhNhanRepository benhNhanRepository)
+        internal LibraryService(IBenhNhanRepository benhNhanRepository, IHoaDon)
         {
             this.benhNhanRepository = benhNhanRepository;
         }
@@ -68,5 +68,12 @@ namespace QuanLyPhongKham.Services
 
         #endregion BenhNhanServices
 
+        #region Services cho Khach hang
+
+        #endregion
+
+        #region Services cho Thanh toan
+
+        #endregion
     }
 }

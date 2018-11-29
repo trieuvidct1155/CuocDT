@@ -7,11 +7,11 @@ using QuanLyPhongKham.Model.DTO;
 
 namespace QuanLyPhongKham.Model.Interfaces
 {
-    interface IKhachHangRepository
+    public interface IKhachHangRepository
     {
         List<KhachHang> DanhSachKH();
         List<KhachHang> TimKiemKH(string col, string info);
-        bool ThemBenhNhan(KhachHang khachHang);
-        bool UpdateBenhNhan(KhachHang khachHang);
+        bool ThemKH(KhachHang khachHang);
+        bool UpdateKH(KhachHang khachHang);
     }
 }

@@ -30,22 +30,17 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtCMND = new System.Windows.Forms.TextBox();
-            this.rdoNam = new System.Windows.Forms.RadioButton();
-            this.rdoNu = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDanToc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddEdit = new System.Windows.Forms.Button();
+            this.txtCMND = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,38 +59,8 @@
             this.txtDiaChi.Location = new System.Drawing.Point(111, 108);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(479, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(231, 22);
             this.txtDiaChi.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(351, 14);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 16);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Giới tính";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(351, 49);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 16);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Ngày sinh";
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.CustomFormat = "dd-MM-yyyy";
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(444, 42);
-            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(145, 22);
-            this.dtpNgaySinh.TabIndex = 6;
             // 
             // label6
             // 
@@ -137,44 +102,13 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(351, 78);
+            this.label10.Location = new System.Drawing.Point(5, 150);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 16);
             this.label10.TabIndex = 29;
             this.label10.Text = "Số CMND";
-            // 
-            // txtCMND
-            // 
-            this.txtCMND.Location = new System.Drawing.Point(444, 73);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(145, 22);
-            this.txtCMND.TabIndex = 7;
-            // 
-            // rdoNam
-            // 
-            this.rdoNam.AutoSize = true;
-            this.rdoNam.Location = new System.Drawing.Point(444, 10);
-            this.rdoNam.Margin = new System.Windows.Forms.Padding(4);
-            this.rdoNam.Name = "rdoNam";
-            this.rdoNam.Size = new System.Drawing.Size(55, 20);
-            this.rdoNam.TabIndex = 4;
-            this.rdoNam.TabStop = true;
-            this.rdoNam.Text = "Nam";
-            this.rdoNam.UseVisualStyleBackColor = true;
-            // 
-            // rdoNu
-            // 
-            this.rdoNu.AutoSize = true;
-            this.rdoNu.Location = new System.Drawing.Point(539, 10);
-            this.rdoNu.Margin = new System.Windows.Forms.Padding(4);
-            this.rdoNu.Name = "rdoNu";
-            this.rdoNu.Size = new System.Drawing.Size(43, 20);
-            this.rdoNu.TabIndex = 5;
-            this.rdoNu.TabStop = true;
-            this.rdoNu.Text = "Nữ";
-            this.rdoNu.UseVisualStyleBackColor = true;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label1
             // 
@@ -199,15 +133,10 @@
             // 
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnAddEdit);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtDanToc);
             this.panel1.Controls.Add(this.txtDiaChi);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.rdoNu);
-            this.panel1.Controls.Add(this.dtpNgaySinh);
-            this.panel1.Controls.Add(this.rdoNam);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtCMND);
             this.panel1.Controls.Add(this.txtHoTen);
@@ -217,14 +146,14 @@
             this.panel1.Location = new System.Drawing.Point(16, 14);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(603, 191);
+            this.panel1.Size = new System.Drawing.Size(363, 248);
             this.panel1.TabIndex = 6;
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(335, 139);
+            this.btnCancel.Location = new System.Drawing.Point(95, 196);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(125, 28);
@@ -236,7 +165,7 @@
             // btnAddEdit
             // 
             this.btnAddEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddEdit.Location = new System.Drawing.Point(473, 138);
+            this.btnAddEdit.Location = new System.Drawing.Point(233, 195);
             this.btnAddEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEdit.Name = "btnAddEdit";
             this.btnAddEdit.Size = new System.Drawing.Size(117, 28);
@@ -245,13 +174,21 @@
             this.btnAddEdit.UseVisualStyleBackColor = true;
             this.btnAddEdit.Click += new System.EventHandler(this.btnAddEdit_Click);
             // 
+            // txtCMND
+            // 
+            this.txtCMND.Location = new System.Drawing.Point(111, 147);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(231, 22);
+            this.txtCMND.TabIndex = 7;
+            // 
             // MainDKKhachHang
             // 
             this.AcceptButton = this.btnAddEdit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(632, 211);
+            this.ClientSize = new System.Drawing.Size(396, 277);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -270,21 +207,16 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtCMND;
-        private System.Windows.Forms.RadioButton rdoNam;
-        private System.Windows.Forms.RadioButton rdoNu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDanToc;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAddEdit;
+        private System.Windows.Forms.TextBox txtCMND;
     }
 }

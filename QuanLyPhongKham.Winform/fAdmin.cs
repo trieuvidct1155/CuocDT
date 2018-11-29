@@ -115,7 +115,7 @@ namespace QuanLyPhongKham.Winform
 
         private void btnThemThuoc_Click(object sender, EventArgs e)
         {
-            fAddEditThuoc f = new fAddEditThuoc();
+            MainThanhToan f = new MainThanhToan();
             f.ShowDialog();
             if (f.DialogResult == DialogResult.OK)
             {

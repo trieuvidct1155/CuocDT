@@ -14,8 +14,10 @@ namespace QuanLyPhongKham.Services
             if (persistanceStrategry == "ADO")
             {
                 libraryService = new LibraryService(
-                                                     new QuanLyPhongKham.Repository.ADO.BenhNhanRepository()
-                                            
+                                                     new QuanLyPhongKham.Repository.ADO.BenhNhanRepository(),
+                                                    new QuanLyPhongKham.Repository.ADO.HoaDonRepository(),
+
+
                                                     );
             }
             //else
