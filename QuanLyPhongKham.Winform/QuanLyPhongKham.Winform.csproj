@@ -96,12 +96,6 @@
     <Compile Include="MainHoaDonHangThang.Designer.cs">
       <DependentUpon>MainHoaDonHangThang.cs</DependentUpon>
     </Compile>
-    <Compile Include="fLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fLogin.Designer.cs">
-      <DependentUpon>fLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainFormCuocDT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainHoaDonHangThang.resx">
       <DependentUpon>MainHoaDonHangThang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fLogin.resx">
-      <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainLuuSim.resx">
       <DependentUpon>MainLuuSim.cs</DependentUpon>

@@ -10,13 +10,12 @@ using System.Data;
 
 namespace QuanLyPhongKham.Services
 {
-    public class LibraryService : IKhachHangRepository, ITaiKhoanRepository, IThanhToanRepository,
+    public class LibraryService : IKhachHangRepository, IThanhToanRepository,
         ISimRepository, ILoaiCuocRepository, IHoaDonDangKyRepository
     {
         #region Repositories
 
         private IKhachHangRepository khachHangRepository;
-        private ITaiKhoanRepository taiKhoanRepository;
         private IThanhToanRepository thanhToanRepository;
         private ISimRepository simRepository;
         private ILoaiCuocRepository loaiCuocRepository;
@@ -30,10 +29,9 @@ namespace QuanLyPhongKham.Services
         {
         }
 
-        internal LibraryService(IKhachHangRepository khachHangRepository, ITaiKhoanRepository taiKhoanRepository, IThanhToanRepository thanhToanRepository, ISimRepository simRepository, ILoaiCuocRepository loaiCuocRepository, IHoaDonDangKyRepository hoaDonDangKyRepository)
+        internal LibraryService(IKhachHangRepository khachHangRepository, IThanhToanRepository thanhToanRepository, ISimRepository simRepository, ILoaiCuocRepository loaiCuocRepository, IHoaDonDangKyRepository hoaDonDangKyRepository)
         {
             this.khachHangRepository = khachHangRepository;
-            this.taiKhoanRepository = taiKhoanRepository;
             this.thanhToanRepository = thanhToanRepository;
             this.simRepository = simRepository;
             this.loaiCuocRepository = loaiCuocRepository;
@@ -42,7 +40,7 @@ namespace QuanLyPhongKham.Services
 
         #endregion constructor
 
-        #region Services cho tài khoản
+     /*   #region Services cho tài khoản
 
         public DataTable Login(string userName, string passWord)
         {
@@ -54,6 +52,7 @@ namespace QuanLyPhongKham.Services
         }
 
         #endregion Services cho tài khoản
+    */
 
 
         #region KhachHangServices

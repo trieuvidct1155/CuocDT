@@ -48,7 +48,6 @@
     <Compile Include="LoaiCuocRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimRepository.cs" />
-    <Compile Include="TaiKhoanRepository.cs" />
     <Compile Include="ThanhToanRepository.cs" />
   </ItemGroup>
   <ItemGroup>

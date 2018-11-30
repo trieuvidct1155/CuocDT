@@ -55,7 +55,6 @@
     <Compile Include="Interfaces\ISimRepository.cs" />
     <Compile Include="Interfaces\IThanhToanRepository.cs" />
     <Compile Include="Interfaces\IKhachHangRepository.cs" />
-    <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
