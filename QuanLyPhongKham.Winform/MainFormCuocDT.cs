@@ -14,6 +14,7 @@ namespace QuanLyPhongKham.Winform
         private TaiKhoan nhanVien;
         private LibraryService libraryService;
         private static List<Model.DTO.KhachHang> listKH;
+        private static List<Model.DTO.HoaDonDK> listHD;
         //private static List<PhieuKhamGUI> listPhieuKham;
         public static Model.DTO.KhachHang khachHangStatic;
 
@@ -115,8 +116,20 @@ namespace QuanLyPhongKham.Winform
 
         private void btnThongTinThanhToan_Click(object sender, EventArgs e)
         {
+            if (dgvDanhSachKH.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = this.dgvDanhSachKH.SelectedRows[0];
+                KhachHang khachHang = listKH.Single(p => p.MaKH == (int)row.Cells[0].Value);
+                HoaDonDK hoaDon = listHD.Single(p => p.MaKH == (int)row.Cells[0].Value);
 
+                MainThongTinThanhToan f = new MainThongTinThanhToan("Xem thông tin thanh toán", hoaDon, khachHang);
+                f.ShowDialog();
 
+                if (f.DialogResult != DialogResult.Cancel)
+                {
+                    LoadDanhSachKH();
+                }
+            }
         }
 
         private void bttThemSim_Click(object sender, EventArgs e)
@@ -150,10 +163,6 @@ namespace QuanLyPhongKham.Winform
 
                 case 2:
                     cot = "TenKH";
-                    break;
-
-                case 3:
-                    cot = "CMND";
                     break;
             }
             if (txtTimKiem.Text == "" && cbxTimKiem.SelectedIndex != 0)
@@ -203,10 +212,6 @@ namespace QuanLyPhongKham.Winform
                 case 3:
                     cot = "TenKH";
                     break;
-
-                case 4:
-                    cot = "CMND";
-                break;
         }
             if (txtTimKiemThanhToan.Text == "" && cbbTimKiemThanhToan.SelectedIndex != 0)
             {
@@ -254,10 +259,6 @@ namespace QuanLyPhongKham.Winform
 
                 case 3:
                     cot = "TenKH";
-                    break;
-
-                case 4:
-                    cot = "CMND";
                     break;
             }
             if (txtTimKiemSim.Text == "" && cbbTimKiemSim.SelectedIndex != 0)

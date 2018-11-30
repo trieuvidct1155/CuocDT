@@ -102,6 +102,12 @@
     <Compile Include="MainFormCuocDT.Designer.cs">
       <DependentUpon>MainFormCuocDT.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainThongTinThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainThongTinThanhToan.Designer.cs">
+      <DependentUpon>MainThongTinThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainTimKiemSIM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFormCuocDT.resx">
       <DependentUpon>MainFormCuocDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainThongTinThanhToan.resx">
+      <DependentUpon>MainThongTinThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainTimKiemSIM.resx">
       <DependentUpon>MainTimKiemSIM.cs</DependentUpon>
