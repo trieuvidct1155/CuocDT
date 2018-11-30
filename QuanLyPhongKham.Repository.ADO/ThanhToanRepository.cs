@@ -35,7 +35,7 @@ namespace QuanLyPhongKham.Repository.ADO
         /// <returns></returns>
         public bool ThemHDTT(HoaDonThanhToan thanhToan)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_InsertHDTT @MaKH , @MaSim ," +
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_TaoHDThanhToan @MaKH , @MaSim ," +
                                         " @CuocThueBao , @TG_TaoHoaDon , @ThanhToan, @ThanhTien, @Status",
                                         new object[] { thanhToan.MaKH, thanhToan.MaSim, thanhToan.CuocThueBao, thanhToan.TG_TaoHoaDon, thanhToan.ThanhToan, thanhToan.ThanhTien, thanhToan.Status});
             return row > 0;
