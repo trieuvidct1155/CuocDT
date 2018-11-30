@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    class LoaiCuoc
+    public class LoaiCuoc
     {
         public LoaiCuoc(DateTime tgBD, DateTime tgKT, decimal giaCuoc, int status)
         {

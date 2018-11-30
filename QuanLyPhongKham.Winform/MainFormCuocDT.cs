@@ -1,6 +1,5 @@
 ﻿using QuanLyPhongKham.Infrastructure;
 using QuanLyPhongKham.Model.DTO;
-using QuanLyPhongKham.Model.UI_DTO.fTiepNhanBenhNhan;
 using QuanLyPhongKham.Services;
 using System;
 using System.Collections.Generic;
@@ -14,9 +13,9 @@ namespace QuanLyPhongKham.Winform
     {
         private TaiKhoan nhanVien;
         private LibraryService libraryService;
-        private static List<BenhNhan> listBenhNhan;
-        private static List<PhieuKhamGUI> listPhieuKham;
-        public static BenhNhan benhNhanStatic;
+        private static List<Model.DTO.KhachHang> listKH;
+        //private static List<PhieuKhamGUI> listPhieuKham;
+        public static Model.DTO.KhachHang khachHangStatic;
 
         /// <summary>
         /// constructor
@@ -25,14 +24,14 @@ namespace QuanLyPhongKham.Winform
         {
             InitializeComponent();
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
-            benhNhanStatic = new BenhNhan();
+            //benhNhanStatic = new BenhNhan();
         }
 
         public MainFormCuocDT(TaiKhoan nhanVien)
         {
             InitializeComponent();
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
-            benhNhanStatic = new BenhNhan();
+            //benhNhanStatic = new BenhNhan();
             this.nhanVien = nhanVien;
         }
 
@@ -41,19 +40,19 @@ namespace QuanLyPhongKham.Winform
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void fTiepNhanBenhNhan_Load(object sender, EventArgs e)
+        private void MainFormCuocDT_Load(object sender, EventArgs e)
         {
             //load danh sách bệnh nhân cho datagridview
-            LoadDanhSachBenhNhan();
+            LoadDanhSachKH();
 
             //load danh sach phieu kham cho dgvDanhSachPhieuKham
             DateTime date = DateTime.Now;
-            listPhieuKham = libraryService.DanhSachPhieuKhamGUI(date);
-            LoadPhieuKham(listPhieuKham);
+            //listPhieuKham = libraryService.DanhSachPhieuKhamGUI(date);
+            //LoadPhieuKham(listPhieuKham);
 
             //set thuộc tính đầu tiên cho combobox tim kiem
-            cbxTimKiemBenhNhan.SelectedIndex = 1;
-            cbbTimKiemPhieuKham.SelectedIndex = 1;
+            cbxTimKiem.SelectedIndex = 1;
+            cbbTimKiemThanhToan.SelectedIndex = 1;
         }
 
        
@@ -61,48 +60,16 @@ namespace QuanLyPhongKham.Winform
         #region Method
 
         /// <summary>
-        /// load danh sách bệnh nhân cho datagridview bệnh nhân
+        /// load danh sách khach hang cho datagridview khach hang
         /// </summary>
-        private void LoadDanhSachBenhNhan()
+        private void LoadDanhSachKH()
         {
-            listBenhNhan = libraryService.DanhSachBenhNhan();
-            dgvDanhSachBenhNhan.Rows.Clear();
-            dgvDanhSachBenhNhan.Refresh();
-            foreach (BenhNhan item in listBenhNhan)
+            listKH = libraryService.DanhSachKH();
+            dgvDanhSachKH.Rows.Clear();
+            dgvDanhSachKH.Refresh();
+            foreach (Model.DTO.KhachHang item in listKH)
             {
-                dgvDanhSachBenhNhan.Rows.Add(item.MaBN, item.HoTen, item.GioiTinh, item.NgaySinh.ToString("dd/MM/yyyy"), item.DanToc, item.SoCMND, item.DiaChi, item.SoDT, item.TienSu);
-            }
-        }
-
-        /// <summary>
-        /// hàm load danh sach phieu kham
-        /// </summary>
-        /// <param name="listPhieuKham"></param>
-        private void LoadPhieuKham(List<PhieuKhamGUI> listPhieuKham)
-        {
-            dgvDanhSachKham.Rows.Clear();
-            dgvDanhSachKham.Refresh();
-
-            int SttDanhSachKham = 1;
-            foreach (PhieuKhamGUI item in listPhieuKham)
-            {
-                dgvDanhSachKham.Rows.Add(SttDanhSachKham++, item.MaBN, item.MaPhieuKham, item.HoTen, item.NgaySinh.ToString("dd/MM/yyyy"), item.GioiTinh, item.DiaChi, item.ChuanDoan, item.HinhThucKham, item.BacSi);
-            }
-        }
-
-        /// <summary>
-        /// hàm load danh sach phieu kham
-        /// </summary>
-        private void LoadPhieuKham()
-        {
-            listPhieuKham = libraryService.DanhSachPhieuKhamGUI(DateTime.Now);
-            dgvDanhSachKham.Rows.Clear();
-            dgvDanhSachKham.Refresh();
-
-            int SttDanhSachKham = 1;
-            foreach (PhieuKhamGUI item in listPhieuKham)
-            {
-                dgvDanhSachKham.Rows.Add(SttDanhSachKham++, item.MaBN, item.MaPhieuKham, item.HoTen, item.NgaySinh.ToString("dd/MM/yyyy"), item.GioiTinh, item.DiaChi, item.ChuanDoan, item.HinhThucKham, item.BacSi);
+                dgvDanhSachKH.Rows.Add(item.MaKH, item.TenKH, item.NgheNghiep,item.CMND, item.DiaChi, item.Status);
             }
         }
 
@@ -110,269 +77,211 @@ namespace QuanLyPhongKham.Winform
 
         #region MenuStrip Events
 
-        private void thêmBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainDKKhachHang f = new MainDKKhachHang("Thêm bệnh nhân", "Thêm");
-            f.ShowDialog();
-            if (f.DialogResult != DialogResult.Cancel)
-            {
-                LoadDanhSachBenhNhan();
-                benhNhanStatic = listBenhNhan[listBenhNhan.Count - 1];
-            }
-        }
-
-        private void lịchSửKhámToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            fLichSuTiepNhan f = new fLichSuTiepNhan(nhanVien);
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-
-        }
 
         #endregion MenuStrip Events
 
         /// <summary>
-        /// Thêm bệnh nhân
+        /// Thêm khach hang
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnThemBenhNhan_Click(object sender, EventArgs e)
+        private void btnThemKH_Click(object sender, EventArgs e)
         {
-            MainDKKhachHang f = new MainDKKhachHang("Thêm bệnh nhân", "Thêm");
+            MainDKKhachHang f = new MainDKKhachHang("Thêm khách hàng", "Thêm");
             f.ShowDialog();
             if (f.DialogResult != DialogResult.Cancel)
             {
-                LoadDanhSachBenhNhan();
-                benhNhanStatic = listBenhNhan[listBenhNhan.Count - 1];
+                LoadDanhSachKH();
+                khachHangStatic = listKH[listKH.Count - 1];
             }
         }
 
-        private void btnCapNhatBenhNhan_Click(object sender, EventArgs e)
+        private void btnCapNhatKH_Click(object sender, EventArgs e)
         {
-            if (dgvDanhSachBenhNhan.SelectedRows.Count > 0)
+            if (dgvDanhSachKH.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = this.dgvDanhSachBenhNhan.SelectedRows[0];
-                BenhNhan benhNhan = listBenhNhan.Single(p => p.MaBN == (int)row.Cells[0].Value);
+                DataGridViewRow row = this.dgvDanhSachKH.SelectedRows[0];
+                KhachHang khachHang = listKH.Single(p => p.MaKH == (int)row.Cells[0].Value);
 
-                MainDKKhachHang f = new MainDKKhachHang("Cập nhật thông tin bệnh nhân", "Cập nhật", benhNhan);
+                MainDKKhachHang f = new MainDKKhachHang("Cập nhật thông tin khách hàng", "Cập nhật", khachHang);
                 f.ShowDialog();
 
                 if (f.DialogResult != DialogResult.Cancel)
                 {
-                    LoadDanhSachBenhNhan();
-                    LoadPhieuKham();
+                    LoadDanhSachKH();
                 }
             }
         }
 
+        private void btnThongTinThanhToan_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void bttThemSim_Click(object sender, EventArgs e)
+        {
+            MainLuuSim f = new MainLuuSim("Thêm sim", "Thêm");
+            f.ShowDialog();
+            if (f.DialogResult != DialogResult.Cancel)
+            {
+                LoadDanhSachKH();
+                khachHangStatic = listKH[listKH.Count - 1];
+            }
+        }
+
         /// <summary>
-        /// tìm kiếm bệnh nhân
+        /// tìm kiếm khách hàng
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnTimKiemBenhNhan_Click(object sender, EventArgs e)
+        private void btnTimKiemBenhNhan_Click_1(object sender, EventArgs e)
         {
             string cot = "";
-            switch (cbxTimKiemBenhNhan.SelectedIndex)
+            switch (cbxTimKiem.SelectedIndex)
             {
                 case 0:
                     cot = "*";
                     break;
 
                 case 1:
-                    cot = "MABN";
+                    cot = "MaKH";
                     break;
 
                 case 2:
-                    cot = "HOTEN";
+                    cot = "TenKH";
                     break;
 
                 case 3:
-                    cot = "SODT";
-                    break;
-
-                case 4:
-                    cot = "SOCMND";
+                    cot = "CMND";
                     break;
             }
-            if (txtTimKiemBenhNhan.Text == "" && cbxTimKiemBenhNhan.SelectedIndex != 0)
+            if (txtTimKiem.Text == "" && cbxTimKiem.SelectedIndex != 0)
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (libraryService.TimKiemBenhNhan(cot, txtTimKiemBenhNhan.Text).Count == 0)
+                if (libraryService.TimKiemKH(cot, txtTimKiem.Text).Count == 0)
                 {
                     MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    dgvDanhSachBenhNhan.Rows.Clear();
-                    dgvDanhSachBenhNhan.Refresh();
-                    foreach (BenhNhan item in libraryService.TimKiemBenhNhan(cot, txtTimKiemBenhNhan.Text))
+                    dgvDanhSachKH.Rows.Clear();
+                    dgvDanhSachKH.Refresh();
+                    foreach (Model.DTO.KhachHang item in libraryService.TimKiemKH(cot, txtTimKiem.Text))
                     {
-                        dgvDanhSachBenhNhan.Rows.Add(item.MaBN, item.HoTen, item.GioiTinh, item.NgaySinh.ToString("dd/MM/yyyy"), item.DanToc, item.SoCMND, item.DiaChi, item.SoDT, item.TienSu);
+                        dgvDanhSachKH.Rows.Add(item.MaKH, item.TenKH, item.NgheNghiep, item.CMND, item.DiaChi, item.Status);
                     }
                 }
             }
         }
 
         /// <summary>
-        /// Tìm kiếm phiếu khám
+        /// tìm kiếm thanh toán
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnTimKiemPhieuKham_Click(object sender, EventArgs e)
+        private void btnTimKiemThanhToan_Click(object sender, EventArgs e)
         {
-            string txtSearch = txtTimKiemPhieuKham.Text.Trim();
-            int col = cbbTimKiemPhieuKham.SelectedIndex;
-            List<PhieuKhamGUI> list;
-            if (string.IsNullOrEmpty(txtSearch) && col != 0)
+            string cot = "";
+            switch (cbbTimKiemThanhToan.SelectedIndex)
             {
-                MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                case 0:
+                    cot = "*";
+                    break;
+
+                case 1:
+                    cot = "MaHD";
+                    break;
+
+                case 2:
+                    cot = "IDSim";
+                    break;
+
+                case 3:
+                    cot = "TenKH";
+                    break;
+
+                case 4:
+                    cot = "CMND";
+                break;
+        }
+            if (txtTimKiemThanhToan.Text == "" && cbbTimKiemThanhToan.SelectedIndex != 0)
+            {
+                MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                switch (col)
+                if (libraryService.TimKiemHDTT(cot, txtTimKiemThanhToan.Text).Count == 0)
                 {
-                    case 0:
-                        LoadPhieuKham(listPhieuKham);
-                        break;
-
-                    case 1:
-                        list = listPhieuKham.Where(p => p.MaBN.ToString().Equals(txtSearch)).ToList();
-                        if (list.Count == 0)
-                        {
-                            MessageBox.Show("Không tìm thấy thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            LoadPhieuKham(list);
-                        }
-                        break;
-
-                    case 2:
-                        list = listPhieuKham.Where(p => p.HoTen.ToString().ToUpper().Contains(txtSearch.ToUpper())).ToList();
-                        if (list.Count == 0)
-                        {
-                            MessageBox.Show("Không tìm thấy thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            LoadPhieuKham(list);
-                        }
-                        break;
-
-                    case 3:
-                        list = listPhieuKham.Where(p => p.SoDT.Contains(txtSearch.ToUpper())).ToList();
-                        if (list.Count == 0)
-                        {
-                            MessageBox.Show("Không tìm thấy thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            LoadPhieuKham(list);
-                        }
-                        break;
-
-                    case 4:
-                        list = listPhieuKham.Where(p => p.SOCMND.Contains(txtSearch.ToUpper())).ToList();
-                        if (list.Count == 0)
-                        {
-                            MessageBox.Show("Không tìm thấy thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            LoadPhieuKham(list);
-                        }
-                        break;
+                    MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dgvDanhSachKH.Rows.Clear();
+                    dgvDanhSachKH.Refresh();
+                    foreach (HoaDonThanhToan item in libraryService.TimKiemHDTT(cot, txtTimKiem.Text))
+                    {
+                        dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaKH, item.MaHD, item.MaSim, item.TG_TaoHoaDon);
+                    }
                 }
             }
         }
 
-        private void btnCapNhatPhieuKham_Click(object sender, EventArgs e)
+        /// <summary>
+        /// tìm kiếm sim
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bttTimKiemSim_Click(object sender, EventArgs e)
         {
-            if (dgvDanhSachKham.SelectedRows.Count != 0)
+            string cot = "";
+            switch (cbbTimKiemSim.SelectedIndex)
             {
-                DataGridViewRow row = dgvDanhSachKham.SelectedRows[0];
-                //MessageBox.Show(row.Cells[2].Value.ToString());
-                PhieuKhamGUI phieuKham = listPhieuKham.Single(p => p.MaPhieuKham == (int)row.Cells[2].Value);
-                BenhNhan benhNhan = listBenhNhan.Single(p => p.MaBN == (int)row.Cells[1].Value);
-                fAddEditPhieuKham f = new fAddEditPhieuKham("Cập nhật phiếu khám", phieuKham, benhNhan);
-                f.ShowDialog();
-                if (f.DialogResult == DialogResult.OK)
-                {
-                    listPhieuKham = libraryService.DanhSachPhieuKhamGUI(DateTime.Now);
-                    LoadPhieuKham(listPhieuKham);
-                }
-            }
-        }
+                case 0:
+                    cot = "*";
+                    break;
 
-        private void btnHuyKham_Click(object sender, EventArgs e)
-        {
-            if (dgvDanhSachKham.SelectedRows.Count != 0)
+                case 1:
+                    cot = "MaHD";
+                    break;
+
+                case 2:
+                    cot = "IDSim";
+                    break;
+
+                case 3:
+                    cot = "TenKH";
+                    break;
+
+                case 4:
+                    cot = "CMND";
+                    break;
+            }
+            if (txtTimKiemSim.Text == "" && cbbTimKiemSim.SelectedIndex != 0)
             {
-                DataGridViewRow row = this.dgvDanhSachKham.SelectedRows[0];
-                int maPhieuKham = (int)row.Cells[2].Value;
-
-                string message = string.Format("Hủy khám cho bệnh nhân {0}?", row.Cells[3].Value.ToString());
-                if (MessageBox.Show(message, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    //int nhanVienTiepNhan = Int32.Parse(Properties.Settings.Default.id);
-                    libraryService.HuyKham(maPhieuKham, nhanVien.MaNV);
-                    LoadPhieuKham();
-                }
+                MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnThemPhieuKham_Click(object sender, EventArgs e)
-        {
-            if (dgvDanhSachBenhNhan.SelectedRows.Count > 0)
+            else
             {
-                DataGridViewRow row = dgvDanhSachBenhNhan.SelectedRows[0];
-
-                BenhNhan benhNhan = listBenhNhan.Single(p => p.MaBN == (int)row.Cells[0].Value);
-                fAddEditPhieuKham f = new fAddEditPhieuKham("Thêm phiếu khám", benhNhan,nhanVien.MaNV);
-                f.ShowDialog();
-                if (f.DialogResult == DialogResult.OK)
+                if (libraryService.TimKiemSim(cot, txtTimKiemSim.Text).Count == 0)
                 {
-                    listPhieuKham = libraryService.DanhSachPhieuKhamGUI(DateTime.Now);
-                    LoadPhieuKham(listPhieuKham);
-                    tabControl1.SelectTab(1);
+                    MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dgvDanhSachKH.Rows.Clear();
+                    dgvDanhSachKH.Refresh();
+                    foreach (Sim item in libraryService.TimKiemSim(cot, txtTimKiem.Text))
+                    {
+                        dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaSim, item.SoSim, item.Status);
+                    }
                 }
             }
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbxTimKiemBenhNhan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTimKiemBenhNhan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    class Sim
+    public class Sim
     {
         public Sim(int maSim, long soSim, bool status)
         {

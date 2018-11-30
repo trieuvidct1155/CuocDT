@@ -39,17 +39,15 @@
     <StartupObject>QuanLyPhongKham.Winform.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -86,35 +84,11 @@
     <Compile Include="MainDKKhachHang.Designer.cs">
       <DependentUpon>MainDKKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAddEditPhieuKham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fAddEditPhieuKham.Designer.cs">
-      <DependentUpon>fAddEditPhieuKham.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainThanhToan.Designer.cs">
       <DependentUpon>MainThanhToan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fAdmin.Designer.cs">
-      <DependentUpon>fAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fChiTietThuoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fChiTietThuoc.Designer.cs">
-      <DependentUpon>fChiTietThuoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fKhamBenhNhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fKhamBenhNhan.Designer.cs">
-      <DependentUpon>fKhamBenhNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="MainHoaDonHangThang.cs">
       <SubType>Form</SubType>
@@ -122,23 +96,11 @@
     <Compile Include="MainHoaDonHangThang.Designer.cs">
       <DependentUpon>MainHoaDonHangThang.cs</DependentUpon>
     </Compile>
-    <Compile Include="fLichSuTiepNhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fLichSuTiepNhan.Designer.cs">
-      <DependentUpon>fLichSuTiepNhan.cs</DependentUpon>
-    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fDoiMatKhauNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fDoiMatKhauNhanVien.Designer.cs">
-      <DependentUpon>fDoiMatKhauNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="MainFormCuocDT.cs">
       <SubType>Form</SubType>
@@ -152,47 +114,28 @@
     <Compile Include="MainTimKiemSIM.Designer.cs">
       <DependentUpon>MainTimKiemSIM.cs</DependentUpon>
     </Compile>
-    <Compile Include="fThuNgan.cs">
+    <Compile Include="MainLuuSim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fThuNgan.Designer.cs">
-      <DependentUpon>fThuNgan.cs</DependentUpon>
+    <Compile Include="MainLuuSim.Designer.cs">
+      <DependentUpon>MainLuuSim.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainDKKhachHang.resx">
       <DependentUpon>MainDKKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAddEditPhieuKham.resx">
-      <DependentUpon>fAddEditPhieuKham.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainThanhToan.resx">
       <DependentUpon>MainThanhToan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fAdmin.resx">
-      <DependentUpon>fAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fChiTietThuoc.resx">
-      <DependentUpon>fChiTietThuoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fKhamBenhNhan.resx">
-      <DependentUpon>fKhamBenhNhan.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainHoaDonHangThang.resx">
       <DependentUpon>MainHoaDonHangThang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fLichSuTiepNhan.resx">
-      <DependentUpon>fLichSuTiepNhan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fThuNgan.resx">
-      <DependentUpon>fThuNgan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fDoiMatKhauNhanVien.resx">
-      <DependentUpon>fDoiMatKhauNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="MainLuuSim.resx">
+      <DependentUpon>MainLuuSim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFormCuocDT.resx">
       <DependentUpon>MainFormCuocDT.cs</DependentUpon>
@@ -235,6 +178,7 @@
     <Content Include="Assets\Images\user-icon.png" />
     <Content Include="Assets\Images\User-Interface-Password-icon.png" />
     <Content Include="Assets\Images\user_male2-64.png" />
+    <Content Include="MetroFramework.txt" />
     <None Include="Resources\TEST.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -255,7 +199,7 @@
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
-      <VersionMinor>8</VersionMinor>
+      <VersionMinor>5</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

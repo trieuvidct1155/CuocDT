@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using QuanLyPhongKham.Infrastructure;
 namespace QuanLyPhongKham.Infrastructure
 {
     public class LibraryParameter
@@ -13,7 +14,7 @@ namespace QuanLyPhongKham.Infrastructure
         {
             get
             {
-                return ConfigurationManager.ConnectionStrings["QuanLyPhongKhamDbContext"].ToString();
+                return ConfigurationManager.ConnectionStrings["QLCuocDT"].ToString();
             }
         }
 

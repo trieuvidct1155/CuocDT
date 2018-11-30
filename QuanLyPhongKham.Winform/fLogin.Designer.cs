@@ -94,18 +94,6 @@
             // 
             // 
             // 
-            this.txbPassWord.CustomButton.Image = null;
-            this.txbPassWord.CustomButton.Location = new System.Drawing.Point(231, 1);
-            this.txbPassWord.CustomButton.Name = "";
-            this.txbPassWord.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txbPassWord.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txbPassWord.CustomButton.TabIndex = 1;
-            this.txbPassWord.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txbPassWord.CustomButton.UseSelectable = true;
-            this.txbPassWord.CustomButton.Visible = false;
-            this.txbPassWord.DisplayIcon = true;
-            this.txbPassWord.Icon = global::QuanLyPhongKham.Winform.Properties.Resources.User_Interface_Password_icon;
-            this.txbPassWord.Lines = new string[0];
             this.txbPassWord.Location = new System.Drawing.Point(3, 60);
             this.txbPassWord.MaxLength = 32767;
             this.txbPassWord.Name = "txbPassWord";
@@ -113,16 +101,9 @@
             //this.txbPassWord.PromptText = "Mật khẩu";
             this.txbPassWord.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbPassWord.SelectedText = "";
-            this.txbPassWord.SelectionLength = 0;
-            this.txbPassWord.SelectionStart = 0;
-            this.txbPassWord.ShortcutsEnabled = true;
             this.txbPassWord.Size = new System.Drawing.Size(255, 25);
             this.txbPassWord.TabIndex = 1;
-            this.txbPassWord.UseSelectable = true;
             this.txbPassWord.UseSystemPasswordChar = true;
-            this.txbPassWord.WaterMark = "Mật khẩu";
-            this.txbPassWord.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txbPassWord.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // txbUserName
             // 
@@ -131,33 +112,14 @@
             // 
             // 
             // 
-            this.txbUserName.CustomButton.Image = null;
-            this.txbUserName.CustomButton.Location = new System.Drawing.Point(231, 1);
-            this.txbUserName.CustomButton.Name = "";
-            this.txbUserName.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txbUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txbUserName.CustomButton.TabIndex = 1;
-            this.txbUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txbUserName.CustomButton.UseSelectable = true;
-            this.txbUserName.CustomButton.Visible = false;
-            this.txbUserName.DisplayIcon = true;
-            this.txbUserName.Icon = global::QuanLyPhongKham.Winform.Properties.Resources.user_icon;
-            this.txbUserName.Lines = new string[0];
             this.txbUserName.Location = new System.Drawing.Point(3, 17);
             this.txbUserName.MaxLength = 32767;
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.PasswordChar = '\0';
             this.txbUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbUserName.SelectedText = "";
-            this.txbUserName.SelectionLength = 0;
-            this.txbUserName.SelectionStart = 0;
-            this.txbUserName.ShortcutsEnabled = true;
             this.txbUserName.Size = new System.Drawing.Size(255, 25);
             this.txbUserName.TabIndex = 0;
-            this.txbUserName.UseSelectable = true;
-            this.txbUserName.WaterMark = "Tên đăng nhập";
-            this.txbUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txbUserName.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnExit
             // 

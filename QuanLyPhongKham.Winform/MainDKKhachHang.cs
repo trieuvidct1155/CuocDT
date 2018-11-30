@@ -17,42 +17,32 @@ namespace QuanLyPhongKham.Winform
     {
         private bool isNew = true;
         private LibraryService libraryService;
-        private BenhNhan benhNhan;
+        private Model.DTO.KhachHang khachHang;
         public MainDKKhachHang()
         {
             InitializeComponent();
-            benhNhan = new BenhNhan();
+            khachHang = new Model.DTO.KhachHang();
         }
 
         /// <summary>
-        /// constructor cho việc update bệnh nhân
+        /// constructor cho việc update khách hàng
         /// </summary>
         /// <param name="title"></param>
         /// <param name="btnText"></param>
         /// <param name="benhNhan"></param>
-        public MainDKKhachHang(string title, string btnText, BenhNhan benhNhan)
+        public MainDKKhachHang(string title, string btnText, Model.DTO.KhachHang khachHang)
         {
             InitializeComponent();
             this.Text = title;
             btnAddEdit.Text = btnText;
-            this.benhNhan = benhNhan;
+            this.khachHang = khachHang;
             isNew = false;
 
             #region Code đổ dữ liệu vào các textbox
-            txtHoTen.Text = benhNhan.HoTen;
-            txtDiaChi.Text = benhNhan.DiaChi;
-            txtDanToc.Text = benhNhan.DanToc;
-            txtSDT.Text = benhNhan.SoDT;
-            txtCMND.Text = benhNhan.SoCMND;
-            txtTienSuBenh.Text = benhNhan.TienSu;
-            dtpNgaySinh.Value = benhNhan.NgaySinh;
-            if (benhNhan.GioiTinh.Equals("Nam"))
-            {
-                rdoNam.Checked = true;
-            }else
-            {
-                rdoNu.Checked = true;
-            }
+            txtHoTen.Text = khachHang.TenKH;
+            txtNgheNghiep.Text = khachHang.NgheNghiep;
+            txtDiaChi.Text = khachHang.DiaChi;
+            txtCMND.Text = khachHang.CMND;
             #endregion
         }
 
@@ -61,10 +51,10 @@ namespace QuanLyPhongKham.Winform
             InitializeComponent();
             this.Text = title;
             btnAddEdit.Text = btnText;
-            benhNhan = new BenhNhan();
+            khachHang = new Model.DTO.KhachHang();
         }
 
-        private void fAddEditBenhNhan_Load(object sender, EventArgs e)
+        private void MainDKKhachHang_Load(object sender, EventArgs e)
         {
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
             txtHoTen.Focus();
@@ -76,46 +66,42 @@ namespace QuanLyPhongKham.Winform
         }
 
         /// <summary>
-        /// events cập nhật / thêm bệnh nhân mới
+        /// events cập nhật / thêm khách hàng mới
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAddEdit_Click(object sender, EventArgs e)
         {
 
-            benhNhan.HoTen = txtHoTen.Text;
-            benhNhan.DiaChi = txtDiaChi.Text;
-            benhNhan.GioiTinh = rdoNam.Checked == true ? "Nam" : "Nữ";
-            benhNhan.NgaySinh = dtpNgaySinh.Value;
-            benhNhan.SoCMND = txtCMND.Text;
-            benhNhan.SoDT = txtSDT.Text;
-            benhNhan.TienSu = txtTienSuBenh.Text;
-            benhNhan.DanToc = txtDanToc.Text;
+            khachHang.TenKH = txtHoTen.Text;
+            khachHang.DiaChi = txtDiaChi.Text;
+            khachHang.NgheNghiep = txtNgheNghiep.Text;
+            khachHang.CMND = txtCMND.Text;
 
 
-            //code cho phần thêm mới bệnh nhân
+            //code cho phần thêm mới khách hàng
             if (isNew)
             {
                 //BenhNhan benhNhan = new BenhNhan();
                
 
-                bool result = libraryService.ThemBenhNhan(benhNhan);
+                bool result = libraryService.ThemKH(khachHang);
 
                 if (result)
                 {
-                    if (DialogResult.OK == MessageBox.Show("Thêm bệnh nhân thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information))
+                    if (DialogResult.OK == MessageBox.Show("Thêm khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information))
                     {
                         DialogResult = DialogResult.OK;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi không thêm được bệnh nhân");
+                    MessageBox.Show("Lỗi không thêm được khách hàng");
                 }
             }
             else
             {
-                if (libraryService.UpdateBenhNhan(benhNhan))
+                if (libraryService.UpdateKH(khachHang))
                 {
                     if (DialogResult.OK == MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information))
                     {
