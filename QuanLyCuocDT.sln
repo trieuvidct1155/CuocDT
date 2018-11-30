@@ -13,17 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Repositories", "4.Reposit
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Infrastructure", "5.Infrastructure", "{FAF03941-CA4F-4865-9DD1-C9F908C802CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongKham.Winform", "QuanLyPhongKham.Winform\QuanLyPhongKham.Winform.csproj", "{9C577984-0390-4F3E-A646-48784F3B4366}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Winform", "QuanLyPhongKham.Winform\QuanLyDT.Winform.csproj", "{9C577984-0390-4F3E-A646-48784F3B4366}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongKham.Services", "QuanLyPhongKham.Services\QuanLyPhongKham.Services.csproj", "{AB92071C-43AD-4E01-8023-88CA313E9F3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Services", "QuanLyPhongKham.Services\QuanLyDT.Services.csproj", "{AB92071C-43AD-4E01-8023-88CA313E9F3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongKham.Model", "QuanLyPhongKham.Model\QuanLyPhongKham.Model.csproj", "{BCB820B0-53ED-4949-AEA9-B96D6817987A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Model", "QuanLyPhongKham.Model\QuanLyDT.Model.csproj", "{BCB820B0-53ED-4949-AEA9-B96D6817987A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongKham.Repository.ADO", "QuanLyPhongKham.Repository.ADO\QuanLyPhongKham.Repository.ADO.csproj", "{C65934FE-6246-4391-A9AA-55DBAC3287DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Repository.ADO", "QuanLyPhongKham.Repository.ADO\QuanLyDT.Repository.ADO.csproj", "{C65934FE-6246-4391-A9AA-55DBAC3287DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongKham.Infrastructure", "QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj", "{6276C72F-08D5-41EC-BE81-89032DCCC9C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Infrastructure", "QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj", "{6276C72F-08D5-41EC-BE81-89032DCCC9C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongKham.Repository.EF", "C:\Users\DELL\Documents\QuanLyPhongKham_Final\QuanLyPhongKham.Repositories.EF\QuanLyPhongKham.Repository.EF.csproj", "{BB8FE505-6E91-4AE2-8D04-19516593892E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Repository.EF", "C:\Users\DELL\Documents\QuanLyPhongKham_Final\QuanLyPhongKham.Repositories.EF\QuanLyDT.Repository.EF.csproj", "{BB8FE505-6E91-4AE2-8D04-19516593892E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

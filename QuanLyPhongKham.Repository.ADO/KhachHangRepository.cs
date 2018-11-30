@@ -19,7 +19,7 @@ namespace QuanLyPhongKham.Repository.ADO
         {
             List<KhachHang> list = new List<KhachHang>();
 
-            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachKH");
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_LoadAllKhachHang");
 
             foreach (DataRow row in table.Rows)
             {
@@ -51,7 +51,15 @@ namespace QuanLyPhongKham.Repository.ADO
         public List<KhachHang> TimKiemKH(string col, string info)
         {
             List<KhachHang> list = new List<KhachHang>();
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiem_MainFormCuocDT  @TruongDuLieu , @ThongTin ", new object[] { col, info });
+            DataTable table = null;
+            if (col == "MaKH")
+            {
+                 table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByMa @ThongTin ", new object[] { info });
+            }
+            else
+            {
+                 table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByTen" +"N'" + "@ThongTin", new object[] { info });
+            }
 
             foreach (DataRow row in table.Rows)
             {

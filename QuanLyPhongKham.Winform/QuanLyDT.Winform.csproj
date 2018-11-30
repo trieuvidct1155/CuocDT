@@ -173,17 +173,17 @@
     <None Include="Resources\TEST.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">
+    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj">
       <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
-      <Name>QuanLyPhongKham.Infrastructure</Name>
+      <Name>QuanLyDT.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyPhongKham.Model.csproj">
+    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyDT.Model.csproj">
       <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
-      <Name>QuanLyPhongKham.Model</Name>
+      <Name>QuanLyDT.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QuanLyPhongKham.Services\QuanLyPhongKham.Services.csproj">
+    <ProjectReference Include="..\QuanLyPhongKham.Services\QuanLyDT.Services.csproj">
       <Project>{ab92071c-43ad-4e01-8023-88ca313e9f3b}</Project>
-      <Name>QuanLyPhongKham.Services</Name>
+      <Name>QuanLyDT.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
