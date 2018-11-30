@@ -14,11 +14,13 @@ namespace QuanLyPhongKham.Services
             if (persistanceStrategry == "ADO")
             {
                 libraryService = new LibraryService(
-                                                     new QuanLyPhongKham.Repository.ADO.BenhNhanRepository(),
-                                                    new QuanLyPhongKham.Repository.ADO.HoaDonRepository(),
-
-
-                                                    );
+                    new QuanLyPhongKham.Repository.ADO.KhachHangRepository(),
+                    new QuanLyPhongKham.Repository.ADO.TaiKhoanRepository(),
+                    new QuanLyPhongKham.Repository.ADO.ThanhToanRepository(),
+                    new QuanLyPhongKham.Repository.ADO.SimRepository(),
+                    new QuanLyPhongKham.Repository.ADO.LoaiCuocRepository(),
+                    new QuanLyPhongKham.Repository.ADO.HoaDonDangKyRepository()
+                   );
             }
             //else
             //{

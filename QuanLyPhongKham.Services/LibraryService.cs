@@ -1,19 +1,26 @@
-﻿using QuanLyPhongKham.Model.DTO;
-using QuanLyPhongKham.Model.Interfaces;
-using QuanLyPhongKham.Model.UI_DTO.fTiepNhanBenhNhan;
+﻿using QuanLyPhongKham.Model.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using QuanLyPhongKham.Model.DTO;
 using System.Data;
-using QuanLyPhongKham.Model.UI_DTO;
+
 
 namespace QuanLyPhongKham.Services
 {
-    public class LibraryService : IBenhNhanRepository
+    public class LibraryService : IKhachHangRepository, ITaiKhoanRepository, IThanhToanRepository,
+        ISimRepository, ILoaiCuocRepository, IHoaDonDangKyRepository
     {
         #region Repositories
 
-        private IBenhNhanRepository benhNhanRepository;
+        private IKhachHangRepository khachHangRepository;
         private ITaiKhoanRepository taiKhoanRepository;
+        private IThanhToanRepository thanhToanRepository;
+        private ISimRepository simRepository;
+        private ILoaiCuocRepository loaiCuocRepository;
+        private IHoaDonDangKyRepository hoaDonDangKyRepository;
 
         #endregion Repositories
 
@@ -23,9 +30,14 @@ namespace QuanLyPhongKham.Services
         {
         }
 
-        internal LibraryService(IBenhNhanRepository benhNhanRepository, IHoaDon)
+        internal LibraryService(IKhachHangRepository khachHangRepository, ITaiKhoanRepository taiKhoanRepository, IThanhToanRepository thanhToanRepository, ISimRepository simRepository, ILoaiCuocRepository loaiCuocRepository, IHoaDonDangKyRepository hoaDonDangKyRepository)
         {
-            this.benhNhanRepository = benhNhanRepository;
+            this.khachHangRepository = khachHangRepository;
+            this.taiKhoanRepository = taiKhoanRepository;
+            this.thanhToanRepository = thanhToanRepository;
+            this.simRepository = simRepository;
+            this.loaiCuocRepository = loaiCuocRepository;
+            this.hoaDonDangKyRepository = hoaDonDangKyRepository;
         }
 
         #endregion constructor
@@ -44,36 +56,126 @@ namespace QuanLyPhongKham.Services
         #endregion Services cho tài khoản
 
 
-        #region BenhNhanServices
+        #region KhachHangServices
 
-        public List<BenhNhan> DanhSachBenhNhan()
+        public List<KhachHang> DanhSachKH()
         {
-            return benhNhanRepository.DanhSachBenhNhan();
+            return khachHangRepository.DanhSachKH();
         }
 
-        public List<BenhNhan> TimKiemBenhNhan(string col, string info)
+        public List<KhachHang> TimKiemKH(string col, string info)
         {
-            return benhNhanRepository.TimKiemBenhNhan(col, info);
+            return khachHangRepository.TimKiemKH(col, info);
         }
 
-        public bool ThemBenhNhan(BenhNhan benhNhan)
+        public bool ThemKH(KhachHang khachhang)
         {
-            return benhNhanRepository.ThemBenhNhan(benhNhan);
+            return khachHangRepository.ThemKH(khachhang);
         }
 
-        public bool UpdateBenhNhan(BenhNhan benhNhan)
+        public bool UpdateKH(KhachHang khachhang)
         {
-            return benhNhanRepository.UpdateBenhNhan(benhNhan);
+            return khachHangRepository.UpdateKH(khachhang);
         }
 
-        #endregion BenhNhanServices
+        #endregion KhachHangServices
 
-        #region Services cho Khach hang
+        #region HoaDonThanhToanServices
 
-        #endregion
+        public List<HoaDonThanhToan> DanhSachHDTT()
+        {
+            return thanhToanRepository.DanhSachHDTT();
+        }
 
-        #region Services cho Thanh toan
+        public List<HoaDonThanhToan> TimKiemHDTT(string col, string info)
+        {
+            return thanhToanRepository.TimKiemHDTT(col, info);
+        }
 
-        #endregion
+        public bool ThemHDTT(HoaDonThanhToan thanhToan)
+        {
+            return thanhToanRepository.ThemHDTT(thanhToan);
+        }
+
+        public bool UpdateHDTT(HoaDonThanhToan thanhToan)
+        {
+            return thanhToanRepository.UpdateHDTT(thanhToan);
+        }
+
+        #endregion HoaDonThanhToanServices
+
+
+        #region SimServices
+
+        public List<Sim> DanhSachSim()
+        {
+            return simRepository.DanhSachSim();
+        }
+
+        public List<Sim> TimKiemSim(string col, string info)
+        {
+            return simRepository.TimKiemSim(col, info);
+        }
+
+        public bool ThemSim(Sim sim)
+        {
+            return simRepository.ThemSim(sim);
+        }
+
+        public bool UpdateSim(Sim sim)
+        {
+            return simRepository.UpdateSim(sim);
+        }
+
+        #endregion SimServices
+
+        #region LoaiCuocServices
+
+        public List<LoaiCuoc> DanhSachLoaiCuoc()
+        {
+            return loaiCuocRepository.DanhSachLoaiCuoc();
+        }
+
+        public List<LoaiCuoc> TimKiemLoaiCuoc(string col, string info)
+        {
+            return loaiCuocRepository.TimKiemLoaiCuoc(col, info);
+        }
+
+        public bool ThemLoaiCuoc(LoaiCuoc loaiCuoc)
+        {
+            return loaiCuocRepository.ThemLoaiCuoc(loaiCuoc);
+        }
+
+        public bool UpdateLoaiCuoc(LoaiCuoc loaiCuoc)
+        {
+            return loaiCuocRepository.UpdateLoaiCuoc(loaiCuoc);
+        }
+
+        #endregion LoaiCuocServices
+
+        #region HoaDonDKServices
+
+        public List<HoaDonDK> DanhSachHoaDonDK()
+        {
+            return hoaDonDangKyRepository.DanhSachHoaDonDK();
+        }
+
+        public List<HoaDonDK> TimKiemHoaDonDK(string col, string info)
+        {
+            return hoaDonDangKyRepository.TimKiemHoaDonDK(col, info);
+        }
+
+        public bool ThemHoaDonDK(HoaDonDK hoaDonDK)
+        {
+            return hoaDonDangKyRepository.ThemHoaDonDK(hoaDonDK);
+        }
+
+        public bool UpdateHoaDonDK(HoaDonDK hoaDonDK)
+        {
+            return hoaDonDangKyRepository.UpdateHoaDonDK(hoaDonDK);
+        }
+
+        #endregion HoaDonDKServices
+
     }
 }

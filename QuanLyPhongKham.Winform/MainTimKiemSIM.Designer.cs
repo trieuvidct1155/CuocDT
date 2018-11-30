@@ -58,7 +58,6 @@ namespace QuanLyPhongKham.Winform
             this.btntimkiem.TabIndex = 42;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = true;
-            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // txttimkiem
             // 
@@ -84,7 +83,6 @@ namespace QuanLyPhongKham.Winform
             this.dgvdsthuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvdsthuoc.Size = new System.Drawing.Size(462, 208);
             this.dgvdsthuoc.TabIndex = 39;
-            this.dgvdsthuoc.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvdsthuoc_MouseDoubleClick);
             // 
             // button1
             // 
@@ -131,7 +129,6 @@ namespace QuanLyPhongKham.Winform
             this.Name = "MainTimKiemSIM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tim Kiem Thuoc";
-            this.Load += new System.EventHandler(this.fTimKiemThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdsthuoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

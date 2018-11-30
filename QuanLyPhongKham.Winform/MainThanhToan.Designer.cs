@@ -48,9 +48,8 @@
             this.btnAddEdit.Name = "btnAddEdit";
             this.btnAddEdit.Size = new System.Drawing.Size(100, 28);
             this.btnAddEdit.TabIndex = 0;
-            this.btnAddEdit.Text = "lưu";
+            this.btnAddEdit.Text = "Cập nhật";
             this.btnAddEdit.UseVisualStyleBackColor = true;
-            this.btnAddEdit.Click += new System.EventHandler(this.btnAddEdit_Click);
             // 
             // btnCancel
             // 
@@ -61,7 +60,6 @@
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -156,7 +154,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm thuốc";
+            this.Text = "Thanh toán";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,11 +32,9 @@
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtNgheNghiep = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDanToc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddEdit = new System.Windows.Forms.Button();
@@ -47,7 +45,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 112);
+            this.label2.Location = new System.Drawing.Point(4, 85);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
@@ -56,7 +54,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(111, 108);
+            this.txtDiaChi.Location = new System.Drawing.Point(111, 81);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(231, 22);
@@ -80,29 +78,18 @@
             this.txtHoTen.Size = new System.Drawing.Size(231, 22);
             this.txtHoTen.TabIndex = 0;
             // 
-            // label7
+            // txtNgheNghiep
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 76);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 16);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Chức vụ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(111, 43);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(231, 22);
-            this.txtSDT.TabIndex = 1;
+            this.txtNgheNghiep.Location = new System.Drawing.Point(111, 43);
+            this.txtNgheNghiep.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNgheNghiep.Name = "txtNgheNghiep";
+            this.txtNgheNghiep.Size = new System.Drawing.Size(231, 22);
+            this.txtNgheNghiep.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 150);
+            this.label10.Location = new System.Drawing.Point(5, 123);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 16);
@@ -121,28 +108,18 @@
             this.label1.Text = "Nghề nghiệp";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txtDanToc
-            // 
-            this.txtDanToc.Location = new System.Drawing.Point(111, 74);
-            this.txtDanToc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDanToc.Name = "txtDanToc";
-            this.txtDanToc.Size = new System.Drawing.Size(231, 22);
-            this.txtDanToc.TabIndex = 2;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnAddEdit);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtDanToc);
             this.panel1.Controls.Add(this.txtDiaChi);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtCMND);
             this.panel1.Controls.Add(this.txtHoTen);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtSDT);
+            this.panel1.Controls.Add(this.txtNgheNghiep);
             this.panel1.Location = new System.Drawing.Point(16, 14);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -176,7 +153,7 @@
             // 
             // txtCMND
             // 
-            this.txtCMND.Location = new System.Drawing.Point(111, 147);
+            this.txtCMND.Location = new System.Drawing.Point(111, 120);
             this.txtCMND.Margin = new System.Windows.Forms.Padding(4);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(231, 22);
@@ -195,8 +172,7 @@
             this.MaximizeBox = false;
             this.Name = "MainDKKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fAddEditBenhNhan";
-            this.Load += new System.EventHandler(this.fAddEditBenhNhan_Load);
+            this.Text = "fThemKH";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -209,11 +185,9 @@
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtNgheNghiep;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDanToc;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAddEdit;

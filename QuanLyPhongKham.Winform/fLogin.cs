@@ -43,40 +43,40 @@ namespace QuanLyPhongKham.Winform
                 result = taiKhoan.MaPhanQuyen;
                 id = taiKhoan.MaNV;
             }
-            switch (result)
-            {
-                case 1:
-                    fAdmin admin = new fAdmin(taiKhoan);
-                    Hide();
-                    admin.ShowDialog();
-                    Show();
-                    break;
+            //switch (result)
+            //{
+            //    case 1:
+            //        fAdmin admin = new fAdmin(taiKhoan);
+            //        Hide();
+            //        admin.ShowDialog();
+            //        Show();
+            //        break;
 
-                case 2:
-                    fKhamBenhNhan khamBenhNhan = new fKhamBenhNhan(id,userName, passWord);
-                    Hide();
-                    khamBenhNhan.ShowDialog();
-                    Show();
-                    break;
+            //    case 2:
+            //        fKhamBenhNhan khamBenhNhan = new fKhamBenhNhan(id,userName, passWord);
+            //        Hide();
+            //        khamBenhNhan.ShowDialog();
+            //        Show();
+            //        break;
 
-                case 3:
-                    MainFormCuocDT tiepNhanBenhNhan = new MainFormCuocDT(taiKhoan);
-                    Hide();
-                    tiepNhanBenhNhan.ShowDialog();
-                    Show();
-                    break;
+            //    case 3:
+            //        MainFormCuocDT tiepNhanBenhNhan = new MainFormCuocDT(taiKhoan);
+            //        Hide();
+            //        tiepNhanBenhNhan.ShowDialog();
+            //        Show();
+            //        break;
 
-                case 4:
-                    fThuNgan thuNgan = new fThuNgan(taiKhoan);
-                    Hide();
-                    thuNgan.ShowDialog();
-                    Show();
-                    break;
+            //    case 4:
+            //        fThuNgan thuNgan = new fThuNgan(taiKhoan);
+            //        Hide();
+            //        thuNgan.ShowDialog();
+            //        Show();
+            //        break;
 
-                default:
-                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-            }
+            //    default:
+            //        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        break;
+            //}
 
             if (result != 0 && chkRememberMe.Checked)
             {

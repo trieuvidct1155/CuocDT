@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    class HoaDonThanhToan
+    public class HoaDonThanhToan
     {
         public HoaDonThanhToan(int maHD, int maKH, int maSim, decimal cuocTB, DateTime tgTaoHD, int thanhToan, decimal thanhTien, int stt)
         {

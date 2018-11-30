@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    class HoaDonDK
+    public class HoaDonDK
     {
         public HoaDonDK(int maHD, int maSim, DateTime tgDK, decimal chiPhi, int maKH)
         {
