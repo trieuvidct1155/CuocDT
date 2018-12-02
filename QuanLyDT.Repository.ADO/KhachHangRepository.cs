@@ -49,16 +49,18 @@ namespace QuanLyDT.Repository.ADO
         /// <returns></returns>
         public List<KhachHang> TimKiemKH(string col, string info)
         {
-            info = "%" + info + "%";
+           
             List<KhachHang> list = new List<KhachHang>();
             DataTable table = null;
+            int text = int.Parse(info);
             if (col == "MaKH")
             {
-                 table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByMa @ThongTin ", new object[] { info });
+                 table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByMa @ThongTin ", new object[] { text });
             }
             else
             {
-                 table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByTen @ThongTin", new object[] { info });
+                info = "%" + info + "%";
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByTen @ThongTin", new object[] { info });
             }
 
             foreach (DataRow row in table.Rows)
