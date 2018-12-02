@@ -128,7 +128,7 @@ namespace QuanLyPhongKham.Winform
             this.Controls.Add(this.dgvdsthuoc);
             this.Name = "MainTimKiemSIM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tim Kiem Thuoc";
+            this.Text = "Tim Kiem Sim";
             ((System.ComponentModel.ISupportInitialize)(this.dgvdsthuoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
