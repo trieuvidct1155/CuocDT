@@ -7,8 +7,8 @@
     <ProjectGuid>{C65934FE-6246-4391-A9AA-55DBAC3287DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuanLyPhongKham.Repository.ADO</RootNamespace>
-    <AssemblyName>QuanLyPhongKham.Repository.ADO</AssemblyName>
+    <RootNamespace>QuanLyDT.Repository.ADO</RootNamespace>
+    <AssemblyName>QuanLyDT.Repository.ADO</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -51,11 +51,11 @@
     <Compile Include="ThanhToanRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj">
+    <ProjectReference Include="..\QuanLyDT.Infrastructure\QuanLyDT.Infrastructure.csproj">
       <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
       <Name>QuanLyDT.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyDT.Model.csproj">
+    <ProjectReference Include="..\QuanLyDT.Model\QuanLyDT.Model.csproj">
       <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
       <Name>QuanLyDT.Model</Name>
     </ProjectReference>

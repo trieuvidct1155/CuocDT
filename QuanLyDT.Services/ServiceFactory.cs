@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyPhongKham.Services
+namespace QuanLyDT.Services
 {
     public class ServiceFactory
     {
@@ -14,16 +14,16 @@ namespace QuanLyPhongKham.Services
             if (persistanceStrategry == "ADO")
             {
                 libraryService = new LibraryService(
-                    new QuanLyPhongKham.Repository.ADO.KhachHangRepository(),
-                    new QuanLyPhongKham.Repository.ADO.ThanhToanRepository(),
-                    new QuanLyPhongKham.Repository.ADO.SimRepository(),
-                    new QuanLyPhongKham.Repository.ADO.LoaiCuocRepository(),
-                    new QuanLyPhongKham.Repository.ADO.HoaDonDangKyRepository()
+                    new QuanLyDT.Repository.ADO.KhachHangRepository(),
+                    new QuanLyDT.Repository.ADO.ThanhToanRepository(),
+                    new QuanLyDT.Repository.ADO.SimRepository(),
+                    new QuanLyDT.Repository.ADO.LoaiCuocRepository(),
+                    new QuanLyDT.Repository.ADO.HoaDonDangKyRepository()
                    );
             }
             //else
             //{
-            //    libraryService = new LibraryService(new QuanLyPhongKham.Repository.EF.TaiKhoanRepository());
+            //    libraryService = new LibraryService(new QuanLyDT.Repository.EF.TaiKhoanRepository());
             //}
             return libraryService;
         }

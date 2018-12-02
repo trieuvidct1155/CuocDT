@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyPhongKham.Winform
+namespace QuanLyDT.Winform
 {
     static class Program
     {

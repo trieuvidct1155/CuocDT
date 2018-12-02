@@ -1,14 +1,14 @@
-﻿using QuanLyPhongKham.Model.Interfaces;
+﻿using QuanLyDT.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyPhongKham.Model.DTO;
+using QuanLyDT.Model.DTO;
 using System.Data;
 
 
-namespace QuanLyPhongKham.Services
+namespace QuanLyDT.Services
 {
     public class LibraryService : IKhachHangRepository, IThanhToanRepository,
         ISimRepository, ILoaiCuocRepository, IHoaDonDangKyRepository

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-using QuanLyPhongKham.Infrastructure;
-namespace QuanLyPhongKham.Infrastructure
+using QuanLyDT.Infrastructure;
+namespace QuanLyDT.Infrastructure
 {
     public class LibraryParameter
     {

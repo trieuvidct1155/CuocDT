@@ -1,13 +1,14 @@
-﻿using QuanLyPhongKham.Model.Interfaces;
+﻿using QuanLyDT.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyPhongKham.Model.DTO;
 using System.Data;
+using QuanLyDT.Model.DTO;
+using QuanLyDT.Model.Interfaces;
 
-namespace QuanLyPhongKham.Repository.ADO
+namespace QuanLyDT.Repository.ADO
 {
     public class LoaiCuocRepository : ILoaiCuocRepository
     {

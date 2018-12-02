@@ -7,8 +7,8 @@
     <ProjectGuid>{BB8FE505-6E91-4AE2-8D04-19516593892E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuanLyPhongKham.Repositories.EF</RootNamespace>
-    <AssemblyName>QuanLyPhongKham.Repositories.EF</AssemblyName>
+    <RootNamespace>QuanLyDT.Repositories.EF</RootNamespace>
+    <AssemblyName>QuanLyDT.Repositories.EF</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -67,13 +67,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\doc_Uni\CuocDT\QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj">
+    <ProjectReference Include="..\QuanLyDT.Infrastructure\QuanLyDT.Infrastructure.csproj">
       <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
       <Name>QuanLyDT.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\doc_Uni\CuocDT\QuanLyPhongKham.Model\QuanLyDT.Model.csproj">
-      <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
-      <Name>QuanLyDT.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{6276C72F-08D5-41EC-BE81-89032DCCC9C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuanLyPhongKham.Infrastructure</RootNamespace>
-    <AssemblyName>QuanLyPhongKham.Infrastructure</AssemblyName>
+    <RootNamespace>QuanLyDT.Infrastructure</RootNamespace>
+    <AssemblyName>QuanLyDT.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -62,7 +62,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

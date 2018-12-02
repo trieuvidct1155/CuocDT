@@ -7,8 +7,8 @@
     <ProjectGuid>{AB92071C-43AD-4E01-8023-88CA313E9F3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuanLyPhongKham.Services</RootNamespace>
-    <AssemblyName>QuanLyPhongKham.Services</AssemblyName>
+    <RootNamespace>QuanLyDT.Services</RootNamespace>
+    <AssemblyName>QuanLyDT.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,17 +47,17 @@
     <Compile Include="ServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj">
-      <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
-      <Name>QuanLyDT.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyDT.Model.csproj">
+    <ProjectReference Include="..\QuanLyDT.Model\QuanLyDT.Model.csproj">
       <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
       <Name>QuanLyDT.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QuanLyPhongKham.Repository.ADO\QuanLyDT.Repository.ADO.csproj">
+    <ProjectReference Include="..\QuanLyDT.Repository.ADO\QuanLyDT.Repository.ADO.csproj">
       <Project>{c65934fe-6246-4391-a9aa-55dbac3287db}</Project>
       <Name>QuanLyDT.Repository.ADO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyDT.Repository.EF\QuanLyDT.Repository.EF.csproj">
+      <Project>{bb8fe505-6e91-4ae2-8d04-19516593892e}</Project>
+      <Name>QuanLyDT.Repository.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

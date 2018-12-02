@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="ChiTietThuocGUI" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>QuanLyPhongKham.Model.UI_DTO.ChiTietThuocGUI, QuanLyPhongKham.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>QuanLyDT.Model.UI_DTO.ChiTietThuocGUI, QuanLyDT.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

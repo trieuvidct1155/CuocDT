@@ -7,8 +7,8 @@
     <ProjectGuid>{BB8FE505-6E91-4AE2-8D04-19516593892E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuanLyPhongKham.Repositories.EF</RootNamespace>
-    <AssemblyName>QuanLyPhongKham.Repositories.EF</AssemblyName>
+    <RootNamespace>QuanLyDT.Repositories.EF</RootNamespace>
+    <AssemblyName>QuanLyDT.Repositories.EF</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

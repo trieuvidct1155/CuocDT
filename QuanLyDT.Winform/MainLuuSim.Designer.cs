@@ -1,4 +1,4 @@
-﻿namespace QuanLyPhongKham.Winform
+﻿namespace QuanLyDT.Winform
 {
     partial class MainLuuSim
     {

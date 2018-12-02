@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyPhongKham.Model.DTO
+namespace QuanLyDT.Model.DTO
 {
     public class LoaiCuoc
     {

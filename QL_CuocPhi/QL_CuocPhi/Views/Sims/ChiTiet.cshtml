@@ -1,0 +1,68 @@
+﻿@model IEnumerable<QL_CuocPhi.Models.CuocGoi>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Chi tiết sử dụng dịch vụ</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Số sim
+        </th>
+        <th>
+            Thời gian bắt đầu
+        </th>
+        <th>
+            Thời gian kết thúc
+        </th>
+        <th>
+            Tổng số phút gọi
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sim.SoSim)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TG_BatDau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TG_KetThuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoPhutSD)
+            </td>
+
+        </tr>
+    }
+
+</table>
+<hr>
+
+    @foreach (var item in Model)
+    {           
+<div style="text-align: center">
+    <a href="../CuocPhi/@item.Sim.SoSim"><input type="button" name="cuocphi" value="Xem Cước Phí" /></a>
+    <a href="../Index/@item.Sim.SoSim"><input type="button" name="cuocphi" value="Danh sách chính" /></a>
+
+</div>
+
+            break;
+
+    }
+
+
+
+
+
+
+
+
+
+

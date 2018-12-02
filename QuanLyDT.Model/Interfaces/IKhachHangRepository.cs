@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyPhongKham.Model.DTO;
+using QuanLyDT.Model.DTO;
 
-namespace QuanLyPhongKham.Model.Interfaces
+namespace QuanLyDT.Model.Interfaces
 {
     public interface IKhachHangRepository
     {

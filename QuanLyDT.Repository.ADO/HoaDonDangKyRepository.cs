@@ -1,16 +1,21 @@
-﻿using QuanLyPhongKham.Model.Interfaces;
+﻿using QuanLyDT.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyPhongKham.Model.DTO;
+using QuanLyDT.Model.DTO;
 using System.Data;
 
-namespace QuanLyPhongKham.Repository.ADO
+namespace QuanLyDT.Repository.ADO
 {
     public class HoaDonDangKyRepository : IHoaDonDangKyRepository
     {
+        public List<HoaDonDK> DanhSachHoaDonDK()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// lấy danh sách HoaDonDK trong database
         /// </summary>

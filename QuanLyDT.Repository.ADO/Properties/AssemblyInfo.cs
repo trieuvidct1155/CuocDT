@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("QuanLyPhongKham.Repository.ADO")]
+[assembly: AssemblyTitle("QuanLyDT.Repository.ADO")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Fb.com/HoangKhien")]
-[assembly: AssemblyProduct("QuanLyPhongKham.Repository.ADO")]
+[assembly: AssemblyProduct("QuanLyDT.Repository.ADO")]
 [assembly: AssemblyCopyright("Copyright © Fb.com/HoangKhien 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

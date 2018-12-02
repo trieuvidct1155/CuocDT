@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyPhongKham.Infrastructure
+namespace QuanLyDT.Infrastructure
 {
     public static class ExtensionMethod
     {
