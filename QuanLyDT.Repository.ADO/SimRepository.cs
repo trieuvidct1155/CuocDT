@@ -15,15 +15,15 @@ namespace QuanLyDT.Repository.ADO
         /// lấy danh sách sim trong database
         /// </summary>
         /// <returns></returns>
-        public List<SimGUI> DanhSachSim()
+        public List<Sim> DanhSachSim()
         {
-            List<SimGUI> list = new List<SimGUI>();
+            List<Sim> list = new List<Sim>();
 
-            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachSimGUI");
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachSim");
 
             foreach (DataRow row in table.Rows)
             {
-                list.Add(new SimGUI(row));
+                list.Add(new Sim(row));
             }
             return list;
         }
@@ -59,14 +59,24 @@ namespace QuanLyDT.Repository.ADO
         /// <param name="col">cột trong database</param>
         /// <param name="info">thông tin cần tìm</param>
         /// <returns></returns>
-        public List<SimGUI> TimKiemSim(string col, string info)
+        public List<Sim> TimKiemSim(string col, string info)
         {
-            List<SimGUI> list = new List<SimGUI>();
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXEC dbo.SP_TimKiemSim  @TruongDuLieu , @ThongTin ", new object[] { col, info });
+            List<Sim> list = new List<Sim>();
+            DataTable table = null;
+            if (col == "MaSim")
+            {
+                int text = int.Parse(info);
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemSim @ThongTin , @text ", new object[] { col , text });
+            }
+            else
+            {
+                info = "%" + info + "%";
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemSim @ThongTin , @text ", new object[] { col , info });
+            }
 
             foreach (DataRow row in table.Rows)
             {
-                list.Add(new SimGUI(row));
+                list.Add(new Sim(row));
             }
             return list;
         }

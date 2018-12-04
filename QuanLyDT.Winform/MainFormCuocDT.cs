@@ -16,7 +16,7 @@ namespace QuanLyDT.Winform
         private LibraryService libraryService;
         private static List<Model.DTO.KhachHang> listKH;
         private static List<HoaDonThanhToan> listHDTT;
-        private static List<SimGUI> listSim;
+        private static List<Sim> listSim;
         public static Model.DTO.KhachHang khachHangStatic;
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace QuanLyDT.Winform
             listSim = libraryService.DanhSachSim();
             dgvDSSim.Rows.Clear();
             dgvDSSim.Refresh();
-            foreach (SimGUI item in listSim)
+            foreach (Sim item in listSim)
             {
-                dgvDSSim.Rows.Add(item.MaKH, item.TenKH, item.SoSim, item.NgheNghiep, item.CMND, item.DiaChi, item.Status);
+                dgvDSSim.Rows.Add(item.MaSim, item.SoSim, item.Status);
             }
         }
 
@@ -257,7 +257,7 @@ namespace QuanLyDT.Winform
                 case 0:
                     cot = "TenKH";
                     break;
-        }
+            }
             if (txtTimKiemThanhToan.Text == "" && cbbTimKiemThanhToan.SelectedIndex != 0)
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -287,7 +287,19 @@ namespace QuanLyDT.Winform
         /// <param name="e"></param>
         private void bttTimKiemSim_Click(object sender, EventArgs e)
         {
-            string cot = "SoSim";
+            string cot = "";
+            switch (cbbTimKiemThanhToan.SelectedIndex)
+            {
+                case 0:
+                    cot = "*";
+                    break;
+                case 1:
+                    cot = "MaSim";
+                    break;
+                case 2:
+                    cot = "SoSim";
+                    break;
+            }
             if (txtTimKiemSim.Text == "" && cbbTimKiemSim.SelectedIndex != 0)
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -302,9 +314,9 @@ namespace QuanLyDT.Winform
                 {
                     dgvDSSim.Rows.Clear();
                     dgvDSSim.Refresh();
-                    foreach (SimGUI item in libraryService.TimKiemSim(cot, txtTimKiem.Text))
+                    foreach (Sim item in libraryService.TimKiemSim(cot, txtTimKiem.Text))
                     {
-                        dgvDSSim.Rows.Add(item.MaKH, item.TenKH, item.SoSim, item.NgheNghiep, item.CMND, item.DiaChi,item.Status);
+                        dgvDSSim.Rows.Add(item.MaSim, item.SoSim, item.Status);
                     }
                 }
             }
