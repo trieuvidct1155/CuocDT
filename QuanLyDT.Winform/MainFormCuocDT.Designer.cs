@@ -89,10 +89,6 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD:QuanLyPhongKham.Winform/MainFormCuocDT.Designer.cs
-=======
-
->>>>>>> bd3c93f2f619aa5213b5076a66b39c7bddf09b4c:QuanLyDT.Winform/MainFormCuocDT.Designer.cs
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -292,7 +288,9 @@
             this.cbxTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTimKiem.FormattingEnabled = true;
             this.cbxTimKiem.Items.AddRange(new object[] {
-            "Họ và tên"});
+            "Tất cả",
+            "Mã KH",
+            "Tên KH"});
             this.cbxTimKiem.Location = new System.Drawing.Point(104, 27);
             this.cbxTimKiem.Name = "cbxTimKiem";
             this.cbxTimKiem.Size = new System.Drawing.Size(110, 24);
@@ -720,25 +718,6 @@
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 200;
             // 
-<<<<<<< HEAD:QuanLyPhongKham.Winform/MainFormCuocDT.Designer.cs
-=======
-            // dataGridViewTextBoxColumn9
-            // 
-
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-
-
->>>>>>> bd3c93f2f619aa5213b5076a66b39c7bddf09b4c:QuanLyDT.Winform/MainFormCuocDT.Designer.cs
             // MainFormCuocDT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

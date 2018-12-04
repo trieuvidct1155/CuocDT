@@ -47,8 +47,7 @@ namespace QuanLyDT.Winform
             DateTime date = DateTime.Now;
 
             //set thuộc tính đầu tiên cho combobox tim kiem
-            cbxTimKiem.SelectedIndex = 0;
-            cbbTimKiemThanhToan.SelectedIndex = 0;
+
         }
 
        
@@ -173,7 +172,22 @@ namespace QuanLyDT.Winform
         /// <param name="e"></param>
         private void btnTimKiemBenhNhan_Click_1(object sender, EventArgs e)
         {
-            string cot = "TenKH";
+            string cot = "";
+            switch (cbxTimKiem.SelectedIndex)
+            {
+                case 0:
+                    cot = "*";
+                    break;
+
+                case 1:
+                    cot = "MaKH";
+                    break;
+
+                case 2:
+                    cot = "TenKH";
+                    break;
+            }
+
             if (txtTimKiem.Text == "" && cbxTimKiem.SelectedIndex != 0)
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
