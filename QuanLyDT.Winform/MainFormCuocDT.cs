@@ -295,7 +295,7 @@ namespace QuanLyDT.Winform
         private void bttTimKiemSim_Click(object sender, EventArgs e)
         {
             string cot = "";
-            switch (cbbTimKiemThanhToan.SelectedIndex)
+            switch (cbbTimKiemSim.SelectedIndex)
             {
                 case 0:
                     cot = "*";
@@ -321,7 +321,7 @@ namespace QuanLyDT.Winform
                 {
                     dgvDSSim.Rows.Clear();
                     dgvDSSim.Refresh();
-                    foreach (Sim item in libraryService.TimKiemSim(cot, txtTimKiem.Text))
+                    foreach (Sim item in libraryService.TimKiemSim(cot, txtTimKiemSim.Text))
                     {
                         dgvDSSim.Rows.Add(item.MaSim, item.SoSim, item.Status);
                     }

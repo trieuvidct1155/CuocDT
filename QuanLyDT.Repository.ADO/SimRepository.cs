@@ -66,12 +66,16 @@ namespace QuanLyDT.Repository.ADO
             if (col == "MaSim")
             {
                 int text = int.Parse(info);
-                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemSim @ThongTin , @text ", new object[] { col , text });
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemSimByMaSim @text ", new object[] { text });
+            }
+            else if (col == "SoSim")
+            {
+                info = "%" + info + "%";
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemSimBySoSim @text ", new object[] { info });
             }
             else
             {
-                info = "%" + info + "%";
-                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemSim @ThongTin , @text ", new object[] { col , info });
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_DanhSachSim", new object[] {});
             }
 
             foreach (DataRow row in table.Rows)
