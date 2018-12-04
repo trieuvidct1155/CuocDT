@@ -78,5 +78,10 @@ namespace QuanLyDT.Winform
                 MessageBox.Show("Lỗi không thêm được");
             }
         }
+
+        public string getSoSim()
+        {
+            return so;
+        }
     }
 }
