@@ -78,6 +78,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainChinhSuaCuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainChinhSuaCuoc.Designer.cs">
+      <DependentUpon>MainChinhSuaCuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainChinhSuaSim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainChinhSuaCuoc.resx">
+      <DependentUpon>MainChinhSuaCuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainChinhSuaSim.resx">
       <DependentUpon>MainChinhSuaSim.cs</DependentUpon>
     </EmbeddedResource>

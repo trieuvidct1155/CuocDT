@@ -17,6 +17,7 @@ namespace QuanLyDT.Winform
         private static List<Model.DTO.KhachHang> listKH;
         private static List<HoaDonThanhToan> listHDTT;
         private static List<Sim> listSim;
+        private static List<LoaiCuoc> listLoaiCuoc;
         public static Model.DTO.KhachHang khachHangStatic;
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace QuanLyDT.Winform
             LoadDanhSachKH();
             LoadDanhSachHDTT();
             LoadDanhSachSim();
+            LoadDanhSachLoaiCuoc();
 
             //set thuộc tính đầu tiên cho combobox tim kiem
             cbxTimKiem.SelectedIndex = 0;
@@ -90,6 +92,17 @@ namespace QuanLyDT.Winform
             foreach (Sim item in listSim)
             {
                 dgvDSSim.Rows.Add(item.MaSim, item.SoSim, item.Status);
+            }
+        }
+
+        private void LoadDanhSachLoaiCuoc()
+        {
+            listLoaiCuoc = libraryService.DanhSachLoaiCuoc();
+            dgvLoaiCuoc.Rows.Clear();
+            dgvLoaiCuoc.Refresh();
+            foreach (LoaiCuoc item in listLoaiCuoc)
+            {
+                dgvLoaiCuoc.Rows.Add(item.TG_BatDau, item.TG_KetThuc, item.GiaCuoc, item.Status);
             }
         }
 
@@ -202,6 +215,33 @@ namespace QuanLyDT.Winform
                 else
                 {
                     MessageBox.Show("Sim đã có người đăng ký, không thể chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnAddCuoc_Click(object sender, EventArgs e)
+        {
+            MainChinhSuaCuoc f = new MainChinhSuaCuoc("Thêm loại cước", "Thêm");
+            f.ShowDialog();
+            if (f.DialogResult != DialogResult.Cancel)
+            {
+                LoadDanhSachLoaiCuoc();
+            }
+        }
+
+        private void btnEditCuoc_Click(object sender, EventArgs e)
+        {
+            if (dgvLoaiCuoc.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = this.dgvLoaiCuoc.SelectedRows[0];
+                LoaiCuoc loaiCuoc = listLoaiCuoc.Single(p => p.TG_BatDau == (TimeSpan)row.Cells[0].Value & p.TG_KetThuc == (TimeSpan)row.Cells[2].Value);
+
+                MainChinhSuaCuoc f = new MainChinhSuaCuoc("Cập nhật loại cước", "Cập nhật", loaiCuoc);
+                f.ShowDialog();
+
+                if (f.DialogResult != DialogResult.Cancel)
+                {
+                    LoadDanhSachKH();
                 }
             }
         }
@@ -328,6 +368,7 @@ namespace QuanLyDT.Winform
                 }
             }
         }
+
 
     }
 }

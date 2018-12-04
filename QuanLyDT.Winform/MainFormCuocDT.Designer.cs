@@ -79,12 +79,13 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnEditCuoc = new System.Windows.Forms.Button();
+            this.btnAddCuoc = new System.Windows.Forms.Button();
+            this.dgvLoaiCuoc = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -95,7 +96,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSim)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiCuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -607,9 +608,9 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button8);
-            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Controls.Add(this.btnEditCuoc);
+            this.tabPage4.Controls.Add(this.btnAddCuoc);
+            this.tabPage4.Controls.Add(this.dgvLoaiCuoc);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1318, 632);
@@ -617,69 +618,78 @@
             this.tabPage4.Text = "Giá cước";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnEditCuoc
             // 
-            this.button7.Location = new System.Drawing.Point(184, 16);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(128, 25);
-            this.button7.TabIndex = 48;
-            this.button7.Text = "Chỉnh sửa thông tin";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEditCuoc.Location = new System.Drawing.Point(184, 16);
+            this.btnEditCuoc.Name = "btnEditCuoc";
+            this.btnEditCuoc.Size = new System.Drawing.Size(128, 25);
+            this.btnEditCuoc.TabIndex = 48;
+            this.btnEditCuoc.Text = "Chỉnh sửa thông tin";
+            this.btnEditCuoc.UseVisualStyleBackColor = true;
+            this.btnEditCuoc.Click += new System.EventHandler(this.btnEditCuoc_Click);
             // 
-            // button8
+            // btnAddCuoc
             // 
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(32, 16);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(121, 25);
-            this.button8.TabIndex = 47;
-            this.button8.Text = "Tạo mới";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAddCuoc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCuoc.Location = new System.Drawing.Point(32, 16);
+            this.btnAddCuoc.Name = "btnAddCuoc";
+            this.btnAddCuoc.Size = new System.Drawing.Size(121, 25);
+            this.btnAddCuoc.TabIndex = 47;
+            this.btnAddCuoc.Text = "Tạo mới";
+            this.btnAddCuoc.UseVisualStyleBackColor = true;
+            this.btnAddCuoc.Click += new System.EventHandler(this.btnAddCuoc_Click);
             // 
-            // dataGridView2
+            // dgvLoaiCuoc
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvLoaiCuoc.AllowUserToAddRows = false;
+            this.dgvLoaiCuoc.AllowUserToDeleteRows = false;
+            this.dgvLoaiCuoc.AllowUserToResizeRows = false;
+            this.dgvLoaiCuoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn2,
+            this.dgvLoaiCuoc.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvLoaiCuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLoaiCuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiCuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 47);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1315, 465);
-            this.dataGridView2.TabIndex = 43;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn8,
+            this.Column7,
+            this.Column8});
+            this.dgvLoaiCuoc.Location = new System.Drawing.Point(3, 47);
+            this.dgvLoaiCuoc.Name = "dgvLoaiCuoc";
+            this.dgvLoaiCuoc.ReadOnly = true;
+            this.dgvLoaiCuoc.RowHeadersVisible = false;
+            this.dgvLoaiCuoc.RowHeadersWidth = 50;
+            this.dgvLoaiCuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLoaiCuoc.Size = new System.Drawing.Size(1315, 465);
+            this.dgvLoaiCuoc.TabIndex = 43;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Mã KH";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Thời gian bắt đầu";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 115;
+            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Họ tên";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Thời gian kết thúc";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 200;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Giá cước";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 150;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Trạng thái";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 150;
             // 
             // MainFormCuocDT
             // 
@@ -711,7 +721,7 @@
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSim)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiCuoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -752,9 +762,9 @@
         private System.Windows.Forms.TextBox txtTimKiemSim;
         private System.Windows.Forms.Button btnThongTinThanhToan;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnEditCuoc;
+        private System.Windows.Forms.Button btnAddCuoc;
+        private System.Windows.Forms.DataGridView dgvLoaiCuoc;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -769,11 +779,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

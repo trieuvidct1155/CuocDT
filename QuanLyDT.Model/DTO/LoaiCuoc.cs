@@ -9,7 +9,7 @@ namespace QuanLyDT.Model.DTO
 {
     public class LoaiCuoc
     {
-        public LoaiCuoc(DateTime tgBD, DateTime tgKT, decimal giaCuoc, int status)
+        public LoaiCuoc(TimeSpan tgBD, TimeSpan tgKT, decimal giaCuoc, bool status)
         {
             TG_BatDau = tgBD;
             TG_KetThuc = tgKT;
@@ -19,17 +19,17 @@ namespace QuanLyDT.Model.DTO
 
         public LoaiCuoc(DataRow row)
         {
-            TG_BatDau = (DateTime)row["TG_BatDau"];
-            TG_KetThuc = (DateTime)row["TG_KetThuc"];
+            TG_BatDau = (TimeSpan)row["TG_BatDau"];
+            TG_KetThuc = (TimeSpan)row["TG_KetThuc"];
             GiaCuoc = (decimal)row["GiaCuoc"];
-            Status = (int)row["Status"];
+            Status = (bool)row["Status"];
         }
 
         public LoaiCuoc() { }
 
-        public DateTime TG_BatDau { get; set; }
-        public DateTime TG_KetThuc { get; set; }
+        public TimeSpan TG_BatDau { get; set; }
+        public TimeSpan TG_KetThuc { get; set; }
         public decimal GiaCuoc { get; set; }
-        public int Status { get; set; }
+        public bool Status { get; set; }
     }
 }

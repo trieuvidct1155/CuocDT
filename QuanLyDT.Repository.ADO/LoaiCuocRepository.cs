@@ -36,7 +36,7 @@ namespace QuanLyDT.Repository.ADO
         /// <returns></returns>
         public bool ThemLoaiCuoc(LoaiCuoc loaiCuoc)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_InsertKH @TG_BatDau , @TG_KetThuc , @GiaCuoc , @Status",
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_TaoLoaiCuoc @TG_BatDau , @TG_KetThuc , @GiaCuoc , @Status ",
                                         new object[] { loaiCuoc.TG_BatDau, loaiCuoc.TG_KetThuc,
                           loaiCuoc.GiaCuoc, loaiCuoc.Status});
             return row > 0;
