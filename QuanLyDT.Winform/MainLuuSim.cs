@@ -62,8 +62,7 @@ namespace QuanLyDT.Winform
         private void bttAddEdit_Click(object sender, EventArgs e)
         {
             sim.SoSim = txtSim.Text;
-            sim.Status = true;
-            long simso = long.Parse(txtSim.Text);
+            sim.Status = false;
             bool result = libraryService.ThemSim(sim);
 
             if (result)
