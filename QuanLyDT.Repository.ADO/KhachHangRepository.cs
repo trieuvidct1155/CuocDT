@@ -80,9 +80,9 @@ namespace QuanLyDT.Repository.ADO
         /// <returns></returns>
         public bool UpdateKH(KhachHang khachhang)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_UpdateKH @MaKH , @TenKH , @NgheNghiep , @CMND , @DiaChi ",
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_UpdateKH @MaKH , @TenKH , @NgheNghiep , @CMND , @DiaChi , @Status",
                           new object[] { khachhang.MaKH, khachhang.TenKH,khachhang.NgheNghiep, khachhang.CMND
-                          , khachhang.DiaChi});
+                          , khachhang.DiaChi, khachhang.Status});
             return row > 0;
         }
 

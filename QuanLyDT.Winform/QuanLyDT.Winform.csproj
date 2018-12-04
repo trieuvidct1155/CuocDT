@@ -84,6 +84,12 @@
     <Compile Include="MainDKKhachHang.Designer.cs">
       <DependentUpon>MainDKKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainFormChiTietSuDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormChiTietSuDung.Designer.cs">
+      <DependentUpon>MainFormChiTietSuDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainDKKhachHang.resx">
       <DependentUpon>MainDKKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormChiTietSuDung.resx">
+      <DependentUpon>MainFormChiTietSuDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainThanhToan.resx">
       <DependentUpon>MainThanhToan.cs</DependentUpon>
