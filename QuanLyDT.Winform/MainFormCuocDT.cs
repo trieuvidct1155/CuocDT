@@ -177,6 +177,8 @@ namespace QuanLyDT.Winform
             if (f.DialogResult != DialogResult.Cancel)
             {
                 LoadDanhSachKH();
+                LoadDanhSachHDTT();
+                LoadDanhSachSim();
                 khachHangStatic = listKH[listKH.Count - 1];
             }
         }
@@ -186,15 +188,20 @@ namespace QuanLyDT.Winform
             if (dgvDSSim.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = this.dgvDSSim.SelectedRows[0];
-                string maKH = row.Cells[0].Value.ToString();
-                KhachHang khachHang = listKH.Single(p => p.MaKH == (int)row.Cells[0].Value);
-                MainThanhToan f = new MainThanhToan("Tiến hành thanh toán", maKH);
-                f.ShowDialog();
-                khachHang.Status = true;
-                if (f.DialogResult != DialogResult.Cancel)
+                string maSim = row.Cells[0].Value.ToString();
+                string status = row.Cells[2].Value.ToString();
+                if(status == "False")
                 {
-                    libraryService.UpdateKHStatus(khachHang);
-                    LoadDanhSachKH();
+                    MainChinhSuaSim f = new MainChinhSuaSim("Tiến hành chỉnh sửa", maSim);
+                    f.ShowDialog();
+                    if (f.DialogResult != DialogResult.Cancel)
+                    {
+                        LoadDanhSachSim();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sim đã có người đăng ký, không thể chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

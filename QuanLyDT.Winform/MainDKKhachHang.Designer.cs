@@ -95,7 +95,6 @@
             this.label10.Size = new System.Drawing.Size(68, 16);
             this.label10.TabIndex = 29;
             this.label10.Text = "Số CMND";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label1
             // 
@@ -106,7 +105,6 @@
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 34;
             this.label1.Text = "Nghề nghiệp";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
