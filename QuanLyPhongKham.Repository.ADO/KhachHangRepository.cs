@@ -35,9 +35,9 @@ namespace QuanLyPhongKham.Repository.ADO
         /// <returns></returns>
         public bool ThemKH(KhachHang khachHang)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_TaoKH @Ten , @NgheNghiep , @Cmnd , @DiaChi , @Status ",
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_TaoKH @Ten , @Cmnd , @NgheNghiep , @DiaChi , @Status ",
                                         new object[] { khachHang.TenKH,
-                          khachHang.NgheNghiep,khachHang.CMND, khachHang.DiaChi, khachHang.Status});
+                          khachHang.CMND, khachHang.NgheNghiep, khachHang.DiaChi, khachHang.Status});
             return row > 0;
         }
 
@@ -52,14 +52,7 @@ namespace QuanLyPhongKham.Repository.ADO
             info = "%" + info + "%";
             List<KhachHang> list = new List<KhachHang>();
             DataTable table = null;
-            if (col == "MaKH")
-            {
-                 table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByMa @ThongTin ", new object[] { info });
-            }
-            else
-            {
-                 table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByTen @ThongTin", new object[] { info });
-            }
+            table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByTen @ThongTin", new object[] { info });
 
             foreach (DataRow row in table.Rows)
             {
@@ -75,9 +68,16 @@ namespace QuanLyPhongKham.Repository.ADO
         /// <returns></returns>
         public bool UpdateKH(KhachHang khachhang)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_UpdateKH @MaKH , @TenKH  , @NgheNghiep , @CMND , @DiaChi , @Status ",
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_UpdateKH @MaKH , @TenKH , @NgheNghiep , @CMND , @DiaChi ",
                           new object[] { khachhang.MaKH, khachhang.TenKH,khachhang.NgheNghiep, khachhang.CMND
-                          , khachhang.DiaChi, khachhang.Status});
+                          , khachhang.DiaChi});
+            return row > 0;
+        }
+
+        public bool UpdateKHStatus(KhachHang khachhang)
+        {
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_UpdateKHStatus @MaKH , @Status ",
+                          new object[] { khachhang.MaKH, khachhang.Status});
             return row > 0;
         }
     }

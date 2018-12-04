@@ -25,7 +25,7 @@ namespace QuanLyPhongKham.Services
 
         #region constructor
 
-        internal LibraryService()
+        public LibraryService()
         {
         }
 
@@ -77,6 +77,11 @@ namespace QuanLyPhongKham.Services
             return khachHangRepository.UpdateKH(khachhang);
         }
 
+        public bool UpdateKHStatus(KhachHang khachhang)
+        {
+            return khachHangRepository.UpdateKHStatus(khachhang);
+        }
+
         #endregion KhachHangServices
 
         #region HoaDonThanhToanServices
@@ -89,6 +94,11 @@ namespace QuanLyPhongKham.Services
         public List<HoaDonThanhToan> TimKiemHDTT(string col, string info)
         {
             return thanhToanRepository.TimKiemHDTT(col, info);
+        }
+
+        public List<HoaDonThanhToan> TimKiemByMaKHHDTT(string info)
+        {
+            return thanhToanRepository.TimKiemByMaKHHDTT(info);
         }
 
         public bool ThemHDTT(HoaDonThanhToan thanhToan)
@@ -110,10 +120,19 @@ namespace QuanLyPhongKham.Services
         {
             return simRepository.DanhSachSim();
         }
+        public List<Sim> TimKiemMaSimMax()
+        {
+            return simRepository.TimKiemMaSimMax();
+        }
 
         public List<Sim> TimKiemSim(string col, string info)
         {
             return simRepository.TimKiemSim(col, info);
+        }
+
+        public List<Sim> TimKiemSimSo(string info)
+        {
+            return simRepository.TimKiemSimSo(info);
         }
 
         public bool ThemSim(Sim sim)
@@ -154,9 +173,9 @@ namespace QuanLyPhongKham.Services
 
         #region HoaDonDKServices
 
-        public List<HoaDonDK> DanhSachHoaDonDK()
+        public List<HoaDonDK> GetHoaDonDK(KhachHang kh)
         {
-            return hoaDonDangKyRepository.DanhSachHoaDonDK();
+            return hoaDonDangKyRepository.GetHoaDonDK(kh);
         }
 
         public List<HoaDonDK> TimKiemHoaDonDK(string col, string info)

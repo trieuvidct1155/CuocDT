@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Repository.ADO", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Infrastructure", "QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj", "{6276C72F-08D5-41EC-BE81-89032DCCC9C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Repository.EF", "C:\Users\DELL\Documents\QuanLyPhongKham_Final\QuanLyPhongKham.Repositories.EF\QuanLyDT.Repository.EF.csproj", "{BB8FE505-6E91-4AE2-8D04-19516593892E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDT.Repository.EF", "QuanLyPhongKham.Repository.EF\QuanLyDT.Repository.EF.csproj", "{BB8FE505-6E91-4AE2-8D04-19516593892E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,7 +15,7 @@ namespace QuanLyPhongKham.Repository.ADO
         /// lấy danh sách HoaDonDK trong database
         /// </summary>
         /// <returns></returns>
-        public HoaDonDK GetHoaDonDK(KhachHang kh)
+        public List<HoaDonDK> GetHoaDonDK(KhachHang kh)
         {
             List<HoaDonDK> list = new List<HoaDonDK>();
 
@@ -25,7 +25,7 @@ namespace QuanLyPhongKham.Repository.ADO
             {
                 list.Add(new HoaDonDK(row));
             }
-            return list[0];
+            return list;
         }
 
         /// <summary>

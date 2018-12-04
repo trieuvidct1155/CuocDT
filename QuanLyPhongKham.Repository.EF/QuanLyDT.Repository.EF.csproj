@@ -31,15 +31,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>D:\doc_Uni\CuocDT\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>D:\doc_Uni\CuocDT\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -67,11 +66,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\doc_Uni\CuocDT\QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj">
+    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyDT.Infrastructure.csproj">
       <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
       <Name>QuanLyDT.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\doc_Uni\CuocDT\QuanLyPhongKham.Model\QuanLyDT.Model.csproj">
+    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyDT.Model.csproj">
       <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
       <Name>QuanLyDT.Model</Name>
     </ProjectReference>

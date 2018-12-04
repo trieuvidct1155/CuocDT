@@ -15,10 +15,6 @@ namespace QuanLyPhongKham.Winform
 {
     public partial class MainThongTinThanhToan : Form
     {
-        private bool isNew = true;
-        private int IDKhachHang;
-        private KhachHang khachHang;
-        private HoaDonDK hoaDon;
         private LibraryService libraryService;
 
         public MainThongTinThanhToan()
@@ -30,38 +26,31 @@ namespace QuanLyPhongKham.Winform
         /// </summary>
         /// <param name="title"></param>
         /// <param name="btnText"></param>
-        /// <param name="benhNhan"></param>
-        //public MainThongTinThanhToan(string title, KhachHang khachHang, int ID)
-        //{
-        //    InitializeComponent();
-        //    isNew = true;
-        //    IDKhachHang = ID;
-        //    this.khachHang = khachHang;
-        //    libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
-        //    //load data cho các textbox
-        //    LoadData(title, this.khachHang);
-        //}
+        /// <param name=""></param>
 
-        public MainThongTinThanhToan(string title, HoaDonDK hoaDon, KhachHang khachHang)
+        public MainThongTinThanhToan(string title, string maKH)
         {
             InitializeComponent();
-            isNew = false;
-            this.hoaDon = hoaDon;
-            this.khachHang = khachHang;
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
             //load data cho các textbox
-            LoadData(title, this.hoaDon, khachHang);
+            LoadData(title, maKH);
         }
 
-        private void LoadData(string title, Model.DTO.HoaDonDK hoaDon, Model.DTO.KhachHang khachHang)
+        private void LoadData(string title, string maKH)
         {
             //set title cho form
             Text = title;
             // load data cho các textbox
-            txtMaKH.Text = khachHang.MaKH.ToString();
-            txtMaSim.Text = hoaDon.MaSim.ToString();
-            txtChiPhi.Text = hoaDon.ChiPhi.ToString();
-            txtTGDangKy.Text = hoaDon.TG_DangKy.ToString();
+            foreach (HoaDonThanhToan item in libraryService.TimKiemByMaKHHDTT(maKH))
+            {
+                txtMaKH.Text = item.MaKH.ToString();
+                txtMaSim.Text = item.MaSim.ToString();
+                txtChiPhi.Text = item.ThanhToan.ToString();
+                txtTGDangKy.Text = item.TG_TaoHoaDon.ToString();
+                txtCuocThueBao.Text = item.CuocThueBao.ToString();
+                txtThanhTien.Text = item.ThanhTien.ToString();
+            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
