@@ -15,15 +15,15 @@ namespace QuanLyDT.Repository.ADO
         /// lấy danh sách sim trong database
         /// </summary>
         /// <returns></returns>
-        public List<Sim> DanhSachSim()
+        public List<SimGUI> DanhSachSim()
         {
-            List<Sim> list = new List<Sim>();
+            List<SimGUI> list = new List<SimGUI>();
 
-            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachSim");
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachSimGUI");
 
             foreach (DataRow row in table.Rows)
             {
-                list.Add(new Sim(row));
+                list.Add(new SimGUI(row));
             }
             return list;
         }
@@ -59,14 +59,14 @@ namespace QuanLyDT.Repository.ADO
         /// <param name="col">cột trong database</param>
         /// <param name="info">thông tin cần tìm</param>
         /// <returns></returns>
-        public List<Sim> TimKiemSim(string col, string info)
+        public List<SimGUI> TimKiemSim(string col, string info)
         {
-            List<Sim> list = new List<Sim>();
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemSim  @TruongDuLieu , @ThongTin ", new object[] { col, info });
+            List<SimGUI> list = new List<SimGUI>();
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXEC dbo.SP_TimKiemSim  @TruongDuLieu , @ThongTin ", new object[] { col, info });
 
             foreach (DataRow row in table.Rows)
             {
-                list.Add(new Sim(row));
+                list.Add(new SimGUI(row));
             }
             return list;
         }

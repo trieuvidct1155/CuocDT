@@ -15,9 +15,10 @@ namespace QuanLyDT.Winform
 {
     public partial class MainThanhToan : Form
     {
-        private bool isNew = true;
+        //private bool isNew = true;
         private HoaDonThanhToan thanhToan;
-        private static List<Sim> listSim;
+        private HoaDonThanhToanGUI thanhToanGUI;
+        //private static List<Sim> listSim;
         private KhachHang khachHang;
         private Sim sim;
         private LibraryService libraryService;
@@ -26,6 +27,7 @@ namespace QuanLyDT.Winform
         {
             InitializeComponent();
             thanhToan = new HoaDonThanhToan();
+            thanhToanGUI = new HoaDonThanhToanGUI();
             khachHang = new KhachHang();
             sim = new Sim();
         }
@@ -43,6 +45,7 @@ namespace QuanLyDT.Winform
             //load data cho các textbox
             LoadData(title, maKH);
             thanhToan = new HoaDonThanhToan();
+            thanhToanGUI = new HoaDonThanhToanGUI();
             khachHang = new KhachHang();
             sim = new Sim();
         }

@@ -16,6 +16,7 @@ namespace QuanLyDT.Winform
         private LibraryService libraryService;
         private static List<Model.DTO.KhachHang> listKH;
         private static List<HoaDonThanhToan> listHDTT;
+        private static List<SimGUI> listSim;
         public static Model.DTO.KhachHang khachHangStatic;
 
         /// <summary>
@@ -43,11 +44,13 @@ namespace QuanLyDT.Winform
         {
 
             LoadDanhSachKH();
-
-            DateTime date = DateTime.Now;
+            LoadDanhSachHDTT();
+            LoadDanhSachSim();
 
             //set thuộc tính đầu tiên cho combobox tim kiem
-
+            cbxTimKiem.SelectedIndex = 0;
+            cbbTimKiemThanhToan.SelectedIndex = 0;
+            cbbTimKiemSim.SelectedIndex = 0;
         }
 
        
@@ -78,6 +81,19 @@ namespace QuanLyDT.Winform
                 dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaHD, item.MaKH, item.MaSim, item.CuocThueBao, item.TG_TaoHoaDon, item.ThanhToan);
             }
         }
+
+        private void LoadDanhSachSim()
+        {
+            listSim = libraryService.DanhSachSim();
+            dgvDSSim.Rows.Clear();
+            dgvDSSim.Refresh();
+            foreach (SimGUI item in listSim)
+            {
+                dgvDSSim.Rows.Add(item.MaKH, item.TenKH, item.SoSim, item.NgheNghiep, item.CMND, item.DiaChi, item.Status);
+            }
+        }
+
+
 
         #endregion Method
 
@@ -162,6 +178,24 @@ namespace QuanLyDT.Winform
             {
                 LoadDanhSachKH();
                 khachHangStatic = listKH[listKH.Count - 1];
+            }
+        }
+
+        private void bttEditSim_Click(object sender, EventArgs e)
+        {
+            if (dgvDSSim.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = this.dgvDSSim.SelectedRows[0];
+                string maKH = row.Cells[0].Value.ToString();
+                KhachHang khachHang = listKH.Single(p => p.MaKH == (int)row.Cells[0].Value);
+                MainThanhToan f = new MainThanhToan("Tiến hành thanh toán", maKH);
+                f.ShowDialog();
+                khachHang.Status = true;
+                if (f.DialogResult != DialogResult.Cancel)
+                {
+                    libraryService.UpdateKHStatus(khachHang);
+                    LoadDanhSachKH();
+                }
             }
         }
 
@@ -253,25 +287,7 @@ namespace QuanLyDT.Winform
         /// <param name="e"></param>
         private void bttTimKiemSim_Click(object sender, EventArgs e)
         {
-            string cot = "";
-            switch (cbbTimKiemSim.SelectedIndex)
-            {
-                case 0:
-                    cot = "*";
-                    break;
-
-                case 1:
-                    cot = "MaHD";
-                    break;
-
-                case 2:
-                    cot = "IDSim";
-                    break;
-
-                case 3:
-                    cot = "TenKH";
-                    break;
-            }
+            string cot = "SoSim";
             if (txtTimKiemSim.Text == "" && cbbTimKiemSim.SelectedIndex != 0)
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -284,16 +300,15 @@ namespace QuanLyDT.Winform
                 }
                 else
                 {
-                    dgvDanhSachKH.Rows.Clear();
-                    dgvDanhSachKH.Refresh();
-                    foreach (Sim item in libraryService.TimKiemSim(cot, txtTimKiem.Text))
+                    dgvDSSim.Rows.Clear();
+                    dgvDSSim.Refresh();
+                    foreach (SimGUI item in libraryService.TimKiemSim(cot, txtTimKiem.Text))
                     {
-                        dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaSim, item.SoSim, item.Status);
+                        dgvDSSim.Rows.Add(item.MaKH, item.TenKH, item.SoSim, item.NgheNghiep, item.CMND, item.DiaChi,item.Status);
                     }
                 }
             }
         }
-
 
     }
 }

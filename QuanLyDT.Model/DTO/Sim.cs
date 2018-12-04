@@ -9,7 +9,7 @@ namespace QuanLyDT.Model.DTO
 {
     public class Sim
     {
-        public Sim(int maSim, long soSim, bool status)
+        public Sim(int maSim, string soSim, bool status)
         {
             MaSim = maSim;
             SoSim = soSim;
@@ -19,7 +19,7 @@ namespace QuanLyDT.Model.DTO
         public Sim(DataRow row)
         {
             MaSim = (int)row["MaSim"];
-            SoSim = (long)row["SoSim"];
+            SoSim = (string)row["SoSim"];
             Status = (bool)row["Status"];
         }
 
@@ -28,7 +28,7 @@ namespace QuanLyDT.Model.DTO
 
 
         public int MaSim { get; set; }
-        public long SoSim { get; set; }
+        public string SoSim { get; set; }
         public bool Status { get; set; }
     }
 }

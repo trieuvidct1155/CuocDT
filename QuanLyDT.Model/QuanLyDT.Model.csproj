@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,9 +46,11 @@
     <Compile Include="DTO\CuocGoi.cs" />
     <Compile Include="DTO\HoaDonDK.cs" />
     <Compile Include="DTO\HoaDonThanhToan.cs" />
+    <Compile Include="DTO\HoaDonThanhToanGUI.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LoaiCuoc.cs" />
     <Compile Include="DTO\Sim.cs" />
+    <Compile Include="DTO\SimGUI.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="Interfaces\IHoaDonDangKyRepository.cs" />
     <Compile Include="Interfaces\ILoaiCuocRepository.cs" />

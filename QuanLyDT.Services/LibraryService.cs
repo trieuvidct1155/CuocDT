@@ -116,7 +116,7 @@ namespace QuanLyDT.Services
 
         #region SimServices
 
-        public List<Sim> DanhSachSim()
+        public List<SimGUI> DanhSachSim()
         {
             return simRepository.DanhSachSim();
         }
@@ -125,7 +125,7 @@ namespace QuanLyDT.Services
             return simRepository.TimKiemMaSimMax();
         }
 
-        public List<Sim> TimKiemSim(string col, string info)
+        public List<SimGUI> TimKiemSim(string col, string info)
         {
             return simRepository.TimKiemSim(col, info);
         }
