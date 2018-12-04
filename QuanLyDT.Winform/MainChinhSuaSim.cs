@@ -16,6 +16,7 @@ namespace QuanLyDT.Winform
     public partial class MainChinhSuaSim : Form
     {
         private Sim sim;
+        private int masim;
         private LibraryService libraryService;
         public MainChinhSuaSim()
         {
@@ -39,6 +40,7 @@ namespace QuanLyDT.Winform
             Text = title;
             sim = new Sim();
             string col = "MaSim";
+            masim = int.Parse(maSim);
             // load data cho các textbox
             if (libraryService.TimKiemSim(col , maSim).Count == 0)
             {
@@ -58,6 +60,7 @@ namespace QuanLyDT.Winform
         {
             sim.SoSim = txtSim.Text.ToString();
             sim.Status = false;
+            sim.MaSim = masim;
             if (libraryService.UpdateSim(sim))
             {
                 if (DialogResult.OK == MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information))
