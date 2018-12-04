@@ -133,11 +133,17 @@ namespace QuanLyDT.Winform
 
         private void btnThemSim_Click(object sender, EventArgs e)
         {
-            MainLuuSim f = new MainLuuSim("Thêm sim", "Thêm");
-            f.ShowDialog();
-            List<Sim> sims = libraryService.TimKiemSim("SoSim", f.getSoSim());
-            string maSim = sims[0].MaSim.ToString();
-            txtMaSim.Text = maSim;
+            string luu = txtMaSim.Text;
+            MainTimKiemSIM f = new MainTimKiemSIM();
+            f.ShowDialog();       
+            if(f.getMaSim()==null)
+            {
+                txtMaSim.Text = luu;
+            }
+            else
+            {
+                txtMaSim.Text = f.getMaSim();
+            }        
             if (f.DialogResult != DialogResult.Cancel)
             {
                 
