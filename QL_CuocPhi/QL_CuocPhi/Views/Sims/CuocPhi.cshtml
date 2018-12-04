@@ -1,0 +1,71 @@
+﻿@model QL_CuocPhi.Models.HoaDonThanhToan
+
+@{
+    ViewBag.Title = "CuocPhi";
+}
+
+<h2>Cước phí</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Thông tin chủ sim</h4>
+        <ul class="list-group">
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Tên Khách Hàng</strong> </span>
+                <span class="col-md-8">@Html.DisplayFor(model => model.KhachHang.TenKH)</span>
+            </li>
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Địa Chỉ</strong> </span>
+                <span class="col-md-8">@Html.DisplayFor(model => model.KhachHang.DiaChi)</span>
+            </li>
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>CMND</strong> </span>
+                <span class="col-md-8">@Html.DisplayFor(model => model.KhachHang.CMND)</span>
+            </li>
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Số sim</strong> </span>
+                <span class="col-md-8">@Html.DisplayFor(model => model.Sim.SoSim)</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-6">
+        <h4>Thông tin cước phí</h4>
+        <ul class="list-group" style="background-color:gray">
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Ngày lập tính cước</strong> </span>
+                <span class="col-md-8">@Html.DisplayFor(model => model.TG_TaoHoaDon)</span>
+            </li>
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Phí thuê bao</strong> </span>
+                <span class="col-md-8">@Html.DisplayFor(model => model.CuocThueBao)</span>
+            </li>
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Phí sử dụng</strong> </span>
+                <span class="col-md-8"> @ViewBag.phiSuDung</span>
+            </li>
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Tổng cước phí</strong> </span>
+                <span class="col-md-8">@Html.DisplayFor(model => model.ThanhTien)</span>
+            </li>
+            <li class="list-group-item row">
+                <span class="col-md-4"> <strong>Tình trạng</strong> </span>
+                @if (Model.ThanhToan == true)
+                {
+                    <span class="col-md-8">Đã thanh toán</span>
+                }
+                else
+                {
+                    <span class="col-md-8">Đã thanh toán</span>
+                }
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div style="text-align: center">
+    <a href="../ChiTiet/@Model.Sim.SoSim"><input type="button" name="cuocphi" value="Xem Chi Tiết Dịch Vụ" /></a>
+    <a href="../Index/@Model.Sim.SoSim"><input type="button" name="cuocphi" value="Danh sách chính" /></a>
+</div>
+
