@@ -135,6 +135,9 @@ namespace QuanLyDT.Winform
         {
             MainLuuSim f = new MainLuuSim("Thêm sim", "Thêm");
             f.ShowDialog();
+            List<Sim> sims = libraryService.TimKiemSim("SoSim", f.getSoSim());
+            string maSim = sims[0].MaSim.ToString();
+            txtMaSim.Text = maSim;
             if (f.DialogResult != DialogResult.Cancel)
             {
                 
