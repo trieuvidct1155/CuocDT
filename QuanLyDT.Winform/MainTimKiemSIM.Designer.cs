@@ -28,15 +28,18 @@ namespace QuanLyDT.Winform
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.dgvdsthuoc = new System.Windows.Forms.DataGridView();
+            this.dgvSim = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdsthuoc)).BeginInit();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSim)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -45,7 +48,7 @@ namespace QuanLyDT.Winform
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(42, 36);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 16);
+            this.label11.Size = new System.Drawing.Size(73, 16);
             this.label11.TabIndex = 43;
             this.label11.Text = "TÌM KIẾM";
             // 
@@ -58,6 +61,7 @@ namespace QuanLyDT.Winform
             this.btntimkiem.TabIndex = 42;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = true;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // txttimkiem
             // 
@@ -67,22 +71,26 @@ namespace QuanLyDT.Winform
             this.txttimkiem.Size = new System.Drawing.Size(130, 22);
             this.txttimkiem.TabIndex = 41;
             // 
-            // dgvdsthuoc
+            // dgvSim
             // 
-            this.dgvdsthuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdsthuoc.Location = new System.Drawing.Point(24, 82);
-            this.dgvdsthuoc.Name = "dgvdsthuoc";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdsthuoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvdsthuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdsthuoc.Size = new System.Drawing.Size(462, 208);
-            this.dgvdsthuoc.TabIndex = 39;
+            this.dgvSim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dgvSim.Location = new System.Drawing.Point(24, 82);
+            this.dgvSim.Name = "dgvSim";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSim.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSim.Size = new System.Drawing.Size(462, 208);
+            this.dgvSim.TabIndex = 39;
             // 
             // button1
             // 
@@ -117,6 +125,23 @@ namespace QuanLyDT.Winform
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã sim";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Số sim";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Trạng thái";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
             // MainTimKiemSIM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,12 +153,12 @@ namespace QuanLyDT.Winform
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btntimkiem);
             this.Controls.Add(this.txttimkiem);
-            this.Controls.Add(this.dgvdsthuoc);
+            this.Controls.Add(this.dgvSim);
             this.Name = "MainTimKiemSIM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tim Kiem Sim";
             this.Load += new System.EventHandler(this.MainTimKiemSIM_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdsthuoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,9 +168,12 @@ namespace QuanLyDT.Winform
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btntimkiem;
         private System.Windows.Forms.TextBox txttimkiem;
-        private System.Windows.Forms.DataGridView dgvdsthuoc;
+        private System.Windows.Forms.DataGridView dgvSim;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

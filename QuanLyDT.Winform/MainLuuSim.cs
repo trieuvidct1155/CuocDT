@@ -64,19 +64,26 @@ namespace QuanLyDT.Winform
             sim.SoSim = txtSim.Text;
             sim.Status = false;
             bool result = libraryService.ThemSim(sim);
-
-            if (result)
-            {
-                so = txtSim.Text;
-                if (DialogResult.OK == MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information))
-                {
-                    DialogResult = DialogResult.OK;
-                }
-            }
-            else
+            if (sim.SoSim == "")
             {
                 MessageBox.Show("Lỗi không thêm được");
             }
+            else
+            {
+                if (result)
+                {
+                    so = txtSim.Text;
+                    if (DialogResult.OK == MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information))
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi không thêm được");
+                }
+            }
+            
         }
 
         public string getSoSim()

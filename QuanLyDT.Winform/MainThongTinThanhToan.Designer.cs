@@ -35,12 +35,8 @@
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtCuocThueBao = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtChiPhi = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtMaSim
@@ -93,7 +89,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(271, 247);
+            this.btnCancel.Location = new System.Drawing.Point(271, 159);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
@@ -102,25 +98,9 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // txtCuocThueBao
-            // 
-            this.txtCuocThueBao.Location = new System.Drawing.Point(140, 111);
-            this.txtCuocThueBao.Name = "txtCuocThueBao";
-            this.txtCuocThueBao.Size = new System.Drawing.Size(231, 20);
-            this.txtCuocThueBao.TabIndex = 26;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Cước thuê bao";
-            // 
             // txtThanhTien
             // 
-            this.txtThanhTien.Location = new System.Drawing.Point(140, 147);
+            this.txtThanhTien.Location = new System.Drawing.Point(140, 114);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(231, 20);
             this.txtThanhTien.TabIndex = 30;
@@ -128,39 +108,19 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 150);
+            this.label7.Location = new System.Drawing.Point(4, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 29;
             this.label7.Text = "Thành tiền";
             // 
-            // txtChiPhi
-            // 
-            this.txtChiPhi.Location = new System.Drawing.Point(139, 181);
-            this.txtChiPhi.Name = "txtChiPhi";
-            this.txtChiPhi.Size = new System.Drawing.Size(231, 20);
-            this.txtChiPhi.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Trạng thái thanh toán";
-            // 
             // MainThongTinThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 288);
-            this.Controls.Add(this.txtChiPhi);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(382, 204);
             this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtCuocThueBao);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMaSim);
             this.Controls.Add(this.txtTGDangKy);
             this.Controls.Add(this.label3);
@@ -183,11 +143,7 @@
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtCuocThueBao;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtChiPhi;
-        private System.Windows.Forms.Label label4;
     }
 }

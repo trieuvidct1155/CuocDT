@@ -15,6 +15,7 @@ namespace QuanLyDT.Winform
 {
     public partial class MainTimKiemSIM : Form
     {
+        private static List<Sim> listSim;
         private LibraryService libraryService;
         public string masim;
         public MainTimKiemSIM()
@@ -41,18 +42,55 @@ namespace QuanLyDT.Winform
 
         private void MainTimKiemSIM_Load(object sender, EventArgs e)
         {
+            LoadDanhSachSim();
+        }
 
+        private void LoadDanhSachSim()
+        {
+            listSim = libraryService.DanhSachSim();
+            listSim.RemoveAll(r => r.Status == true);
+            dgvSim.Rows.Clear();
+            dgvSim.Refresh();
+            foreach (Sim item in listSim)
+            {
+                dgvSim.Rows.Add(item.MaSim, item.SoSim, item.Status);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {           
-            masim = (string)dgvdsthuoc.SelectedRows[0].Cells[0].Value;
+            masim = (string)dgvSim.SelectedRows[0].Cells[0].Value;
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+            string cot = "SoSim";
+            if (txttimkiem.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (libraryService.TimKiemSim(cot, txttimkiem.Text).Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dgvSim.Rows.Clear();
+                    dgvSim.Refresh();
+                    foreach (Sim item in libraryService.TimKiemSim(cot, txttimkiem.Text))
+                    {
+                        dgvSim.Rows.Add(item.MaSim, item.SoSim, item.Status);
+                    }
+                }
+            }
         }
     }
 }

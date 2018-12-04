@@ -55,7 +55,8 @@ namespace QuanLyDT.Repository.ADO
         public List<HoaDonDK> TimKiemHoaDonDK(string col, string info)
         {
             List<HoaDonDK> list = new List<HoaDonDK>();
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHoaDonDK  @TruongDuLieu , @ThongTin ", new object[] { col, info });
+            int inf = int.Parse(info);
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHoaDonDK  @TruongDuLieu , @ThongTin ", new object[] { col, inf });
 
             foreach (DataRow row in table.Rows)
             {

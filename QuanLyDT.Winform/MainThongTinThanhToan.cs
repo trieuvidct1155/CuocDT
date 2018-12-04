@@ -40,15 +40,14 @@ namespace QuanLyDT.Winform
         {
             //set title cho form
             Text = title;
+            string col = "MaKH";
             // load data cho các textbox
-            foreach (HoaDonThanhToan item in libraryService.TimKiemByMaKHHDTT(maKH))
+            foreach (HoaDonDK item in libraryService.TimKiemHoaDonDK(col, maKH))
             {
                 txtMaKH.Text = item.MaKH.ToString();
                 txtMaSim.Text = item.MaSim.ToString();
-                txtChiPhi.Text = item.ThanhToan.ToString();
-                txtTGDangKy.Text = item.TG_TaoHoaDon.ToString();
-                txtCuocThueBao.Text = item.CuocThueBao.ToString();
-                txtThanhTien.Text = item.ThanhTien.ToString();
+                txtTGDangKy.Text = item.TG_DangKy.ToString();
+                txtThanhTien.Text = item.ChiPhi.ToString();
             }
             
         }
