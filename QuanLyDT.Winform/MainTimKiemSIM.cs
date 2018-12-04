@@ -43,5 +43,16 @@ namespace QuanLyDT.Winform
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {           
+            masim = (string)dgvdsthuoc.SelectedRows[0].Cells[0].Value;
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
