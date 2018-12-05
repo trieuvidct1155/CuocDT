@@ -193,6 +193,11 @@ namespace QuanLyDT.Services
             return hoaDonDangKyRepository.UpdateHoaDonDK(hoaDonDK);
         }
 
+        public bool XoaCuoc(LoaiCuoc loaiCuoc)
+        {
+            return loaiCuocRepository.XoaCuoc(loaiCuoc);
+        }
+
         #endregion HoaDonDKServices
 
     }

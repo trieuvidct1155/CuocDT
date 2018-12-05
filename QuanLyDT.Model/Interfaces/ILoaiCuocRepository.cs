@@ -13,5 +13,6 @@ namespace QuanLyDT.Model.Interfaces
         List<LoaiCuoc> TimKiemLoaiCuoc(string col, string info);
         bool ThemLoaiCuoc(LoaiCuoc loaiCuoc);
         bool UpdateLoaiCuoc(LoaiCuoc loaiCuoc);
+        bool XoaCuoc(LoaiCuoc loaiCuoc);
     }
 }
