@@ -234,14 +234,14 @@ namespace QuanLyDT.Winform
             if (dgvLoaiCuoc.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = this.dgvLoaiCuoc.SelectedRows[0];
-                LoaiCuoc loaiCuoc = listLoaiCuoc.Single(p => p.TG_BatDau == (TimeSpan)row.Cells[0].Value & p.TG_KetThuc == (TimeSpan)row.Cells[2].Value);
+                LoaiCuoc loaiCuoc = listLoaiCuoc.Single(p => p.TG_BatDau == (TimeSpan)row.Cells[0].Value & p.TG_KetThuc == (TimeSpan)row.Cells[1].Value);
 
                 MainChinhSuaCuoc f = new MainChinhSuaCuoc("Cập nhật loại cước", "Cập nhật", loaiCuoc);
                 f.ShowDialog();
 
                 if (f.DialogResult != DialogResult.Cancel)
                 {
-                    LoadDanhSachKH();
+                    LoadDanhSachLoaiCuoc();
                 }
             }
         }
@@ -369,6 +369,22 @@ namespace QuanLyDT.Winform
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvLoaiCuoc.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = this.dgvLoaiCuoc.SelectedRows[0];
+                LoaiCuoc loaiCuoc = listLoaiCuoc.Single(p => p.TG_BatDau == (TimeSpan)row.Cells[0].Value & p.TG_KetThuc == (TimeSpan)row.Cells[1].Value);          
+                    if (libraryService.XoaCuoc(loaiCuoc))
+                    {
+                        if (DialogResult.OK == MessageBox.Show("Xóa thành thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information))
+                        {
+                            DialogResult = DialogResult.OK;
+                        }
 
+                    }
+                LoadDanhSachLoaiCuoc();
+            }
+        }
     }
 }

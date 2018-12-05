@@ -72,5 +72,12 @@ namespace QuanLyDT.Repository.ADO
                           loaiCuoc.GiaCuoc, loaiCuoc.Status});
             return row > 0;
         }
+
+        public bool XoaCuoc(LoaiCuoc loaiCuoc)
+        {
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_XoaLoaiCuoc @TG_BatDau , @TG_KetThuc",
+                      new object[] { loaiCuoc.TG_BatDau, loaiCuoc.TG_KetThuc});
+            return row > 0;
+        }
     }
 }
