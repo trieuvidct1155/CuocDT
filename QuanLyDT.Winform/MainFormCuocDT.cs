@@ -80,7 +80,7 @@ namespace QuanLyDT.Winform
             dgvDanhSachHoaDonThanhToan.Refresh();
             foreach (HoaDonThanhToan item in listHDTT)
             {
-                dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaHD, item.MaKH, item.MaSim, item.CuocThueBao, item.TG_TaoHoaDon, item.ThanhToan);
+                dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaHD, item.MaKH, item.MaSim, item.CuocThueBao, item.TG_TaoHoaDon, item.ThanhToan, item.ThanhTien, item.Status);
             }
         }
 
@@ -234,7 +234,7 @@ namespace QuanLyDT.Winform
             if (dgvLoaiCuoc.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = this.dgvLoaiCuoc.SelectedRows[0];
-                LoaiCuoc loaiCuoc = listLoaiCuoc.Single(p => p.TG_BatDau == (TimeSpan)row.Cells[0].Value & p.TG_KetThuc == (TimeSpan)row.Cells[2].Value);
+                LoaiCuoc loaiCuoc = listLoaiCuoc.Single(p => p.TG_BatDau == (TimeSpan)row.Cells[0].Value & p.TG_KetThuc == (TimeSpan)row.Cells[1].Value);
 
                 MainChinhSuaCuoc f = new MainChinhSuaCuoc("Cập nhật loại cước", "Cập nhật", loaiCuoc);
                 f.ShowDialog();
@@ -302,7 +302,13 @@ namespace QuanLyDT.Winform
             switch (cbbTimKiemThanhToan.SelectedIndex)
             {
                 case 0:
+                    cot = "*";
+                    break;
+                case 1:
                     cot = "TenKH";
+                    break;
+                case 2:
+                    cot = "SoSim";
                     break;
             }
             if (txtTimKiemThanhToan.Text == "" && cbbTimKiemThanhToan.SelectedIndex != 0)
@@ -368,7 +374,6 @@ namespace QuanLyDT.Winform
                 }
             }
         }
-
 
     }
 }

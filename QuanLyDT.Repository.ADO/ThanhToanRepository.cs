@@ -50,7 +50,17 @@ namespace QuanLyDT.Repository.ADO
         public List<HoaDonThanhToan> TimKiemHDTT(string col, string info)
         {
             List<HoaDonThanhToan> list = new List<HoaDonThanhToan>();
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiem_MainFormCuocDT  @TruongDuLieu , @ThongTin ", new object[] { col, info });
+            DataTable table = null;
+            if (col == "SoSim")
+            {
+                info = "%" + info + "%";
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHDHTBySoSim @ThongTin ", new object[] { info });
+            }
+            else
+            {
+                info = "%" + info + "%";
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHDHTByTenKH @ThongTin", new object[] { info });
+            }
 
             foreach (DataRow row in table.Rows)
             {
