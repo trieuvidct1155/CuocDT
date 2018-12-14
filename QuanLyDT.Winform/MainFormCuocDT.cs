@@ -408,5 +408,32 @@ namespace QuanLyDT.Winform
             MainChonFile f = new MainChonFile();
             f.ShowDialog();          
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.dgvDanhSachKH.SelectedRows[0];
+            string maKH = row.Cells[0].Value.ToString();
+            bool status = bool.Parse(row.Cells[5].Value.ToString());
+            KhachHang khachHang = listKH.Single(p => p.MaKH == (int)row.Cells[0].Value);
+
+            if(status)
+            {
+                khachHang.Status = false;
+                libraryService.UpdateKHStatus(khachHang);
+                LoadDanhSachKH();
+            }
+            else
+            {
+                khachHang.Status = true;
+                libraryService.UpdateKHStatus(khachHang);
+                LoadDanhSachKH();
+            }
+        }
+
+        private void btnCapNhatPhieuKham_Click(object sender, EventArgs e)
+        {
+            FormMail f = new FormMail();
+            f.ShowDialog();
+        }
     }
 }
