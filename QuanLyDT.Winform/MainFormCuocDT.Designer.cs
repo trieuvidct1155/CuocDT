@@ -367,6 +367,7 @@
             this.btnCapNhatPhieuKham.TabIndex = 3;
             this.btnCapNhatPhieuKham.Text = "Gửi hóa đơn thanh toán";
             this.btnCapNhatPhieuKham.UseVisualStyleBackColor = true;
+            this.btnCapNhatPhieuKham.Click += new System.EventHandler(this.btnCapNhatPhieuKham_Click);
             // 
             // btnHuyKham
             // 

@@ -59,8 +59,8 @@ namespace QuanLyDT.Winform
                     continue;
                 }
                 string[] chuoi = lines[i].Split(new Char[] { ' ' });
-                string tgBD = chuoi[1] +" "+ chuoi[2] + " " + chuoi[3];
-                string tgKT = chuoi[4] + " " + chuoi[5] + " " + chuoi[6];
+                string tgBD = chuoi[1] +" "+ chuoi[2];
+                string tgKT = chuoi[3] + " " + chuoi[4];
 
                 CuocGoi cg = new CuocGoi();
                 cg.MaSim = int.Parse(chuoi[0]);
@@ -71,6 +71,45 @@ namespace QuanLyDT.Winform
                 libraryService.ThemCuocGoi(cg);
             }
             this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult result = saveFileDialog1.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                fileName = saveFileDialog1.FileName;
+                textBox1.Text = fileName;
+                DateTime start = new DateTime(2017, 1, 1);
+                int range = (DateTime.Today - start).Days;
+       
+                Random a = new Random();
+
+                FileStream fs = new FileStream(fileName, FileMode.Create);
+                StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);
+                sWriter.WriteLine("IDSIM\tTGBD\tTGKT");
+                List<Sim> sims = libraryService.DanhSachSim();
+                
+                for (int i = 1; i <= 100; i++)
+                {
+                    int id = sims[a.Next(1,sims.Count)].MaSim;
+                    int b = a.Next(7);
+                    int c = a.Next(59);
+                    TimeSpan d = new System.TimeSpan(0, b, c, 0);
+                    DateTime TGBD = start.AddDays(a.Next(range)).AddHours(a.Next(0, 23)).AddMinutes(a.Next(0, 60)).AddSeconds(a.Next(0, 60));
+
+                    DateTime TGKT = TGBD.Add(d);
+                    sWriter.WriteLine(id + " " + TGBD.ToString("yyyy-MM-dd HH:mm:ss") + " " + TGKT.ToString("yyyy-MM-dd HH:mm:ss"));
+
+
+                }
+
+                sWriter.Flush();
+
+
+                fs.Close();
+            }
+
         }
     }
 }
