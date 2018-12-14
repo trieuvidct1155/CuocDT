@@ -58,17 +58,25 @@ namespace QuanLyDT.Winform
                 {
                     continue;
                 }
-                string[] chuoi = lines[i].Split(new Char[] { ' ' });
-                string tgBD = chuoi[1] +" "+ chuoi[2];
-                string tgKT = chuoi[3] + " " + chuoi[4];
+                try
+                {
+                    string[] chuoi = lines[i].Split(new Char[] { ' ' });
+                    string tgBD = chuoi[1] + " " + chuoi[2];
+                    string tgKT = chuoi[3] + " " + chuoi[4];
 
-                CuocGoi cg = new CuocGoi();
-                cg.MaSim = int.Parse(chuoi[0]);
-                cg.TG_BatDau = DateTime.Parse(tgBD);
-                cg.TG_KetThuc = DateTime.Parse(tgKT);
-                TimeSpan d = cg.TG_KetThuc.Subtract(cg.TG_BatDau);
-                cg.SoPhutSD = int.Parse(d.TotalMinutes.ToString());
-                libraryService.ThemCuocGoi(cg);
+                    CuocGoi cg = new CuocGoi();
+                    cg.MaSim = int.Parse(chuoi[0]);
+                    cg.TG_BatDau = DateTime.Parse(tgBD);
+                    cg.TG_KetThuc = DateTime.Parse(tgKT);
+                    TimeSpan d = cg.TG_KetThuc.Subtract(cg.TG_BatDau);
+                    cg.SoPhutSD = int.Parse(d.TotalMinutes.ToString());
+                    libraryService.ThemCuocGoi(cg);
+                }
+                catch {}
+                {
+                    MessageBox.Show("Import file log không thành công !!", "Thông báo");
+                }
+                
             }
             this.Close();
         }
@@ -89,7 +97,7 @@ namespace QuanLyDT.Winform
                 StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);
                 sWriter.WriteLine("IDSIM\tTGBD\tTGKT");
                 List<Sim> sims = libraryService.DanhSachSim();
-                
+                sims = sims.Where(ex => ex.Status == true).ToList<Sim>();
                 for (int i = 1; i <= 100; i++)
                 {
                     int id = sims[a.Next(1,sims.Count)].MaSim;
