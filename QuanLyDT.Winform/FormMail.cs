@@ -43,6 +43,7 @@ namespace QuanLyDT.Winform
             {
                 GuiMail("trieuvi.bloodline2@gmail.com", email, txtSubj.Text, txtMess.Text);
             }
+            this.Close();
             
         }
 

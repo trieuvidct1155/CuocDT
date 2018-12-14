@@ -214,5 +214,14 @@ namespace QuanLyDT.Services
         {
             return thanhToanRepository.TimKiemHDTTByMaSim(masim);
         }
+        public List<KhachHang> TimKiemKHByMaSim(int info)
+        {
+            return khachHangRepository.TimKiemKHByMaSim(info);
+        }
+
+        public bool XoaCuocGoi(CuocGoi cg)
+        {
+            return thanhToanRepository.XoaCuocGoi(cg);
+        }
     }
 }

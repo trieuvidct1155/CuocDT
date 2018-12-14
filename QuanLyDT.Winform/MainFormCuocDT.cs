@@ -431,25 +431,38 @@ namespace QuanLyDT.Winform
         }
         private void btnCapNhatPhieuKham_Click(object sender, EventArgs e)
         {
+            FormMail f = new FormMail();
+            f.ShowDialog();
             List<Sim> sims = libraryService.DanhSachSim();
+            sims = sims.Where(x => x.Status == true).ToList<Sim>();
             int gia = 0;
             foreach(Sim s in sims)
             {
+
                 List<CuocGoi> cgs = libraryService.DanhSachCuocGoi(s.MaSim);
-                if(cgs.Count>0)
+
+
+                
+                cgs = cgs.Where(x => x.TG_BatDau == DateTime.Now.AddMonths(-1)).ToList<CuocGoi>();
+
+                if (cgs.Count>0)
                 {
                     foreach (CuocGoi cg in cgs)
                     {
                         gia = gia + TinhCuoc(cg.TG_BatDau, cg.TG_KetThuc, cg.SoPhutSD);
                     }
                 }
-                if(libraryService.TimKiemHDTTByMaSim(s.MaSim).Count==1)
-                {
-                    HoaDonThanhToan hdtt = libraryService.TimKiemHDTTByMaSim(s.MaSim)[0];
-                    hdtt.ThanhTien = gia;
-                    hdtt.Status = true;
-                    libraryService.UpdateHDTT(hdtt);
-                }              
+
+                KhachHang kh = libraryService.TimKiemKHByMaSim(s.MaSim)[0];
+                HoaDonDK dk = libraryService.TimKiemHoaDonDK("MaKH", kh.MaKH.ToString())[0];
+                HoaDonThanhToan hdtt = new HoaDonThanhToan();
+                hdtt.MaKH = kh.MaKH;
+                hdtt.MaSim = s.MaSim;
+                hdtt.TG_TaoHoaDon = DateTime.Now;
+                hdtt.ThanhToan = true;
+                hdtt.CuocThueBao = dk.ChiPhi;
+                hdtt.ThanhTien = gia;
+                libraryService.ThemHDTT(hdtt);
             }
             LoadDanhSachHDTT();
         }

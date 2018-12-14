@@ -14,5 +14,6 @@ namespace QuanLyDT.Model.Interfaces
         bool ThemKH(KhachHang khachHang);
         bool UpdateKH(KhachHang khachHang);
         bool UpdateKHStatus(KhachHang khachHang);
+        List<KhachHang> TimKiemKHByMaSim(int info);
     }
 }

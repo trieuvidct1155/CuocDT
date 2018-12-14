@@ -16,5 +16,6 @@ namespace QuanLyDT.Model.Interfaces
         bool ThemHDTT(HoaDonThanhToan hoaDonThanhToan);
         bool UpdateHDTT(HoaDonThanhToan hoaDonThanhToan);
         bool ThemCuocGoi(CuocGoi cg);
+        bool XoaCuocGoi(CuocGoi cg);
     }
 }

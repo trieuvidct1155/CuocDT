@@ -121,5 +121,11 @@ namespace QuanLyDT.Repository.ADO
             }
             return list;
         }
+
+        public bool XoaCuocGoi(CuocGoi cg)
+        {
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_XoaCuocGoi @MaKH ",  new object[] { cg.MaCuocGoi });
+            return row > 0;
+        }
     }
 }

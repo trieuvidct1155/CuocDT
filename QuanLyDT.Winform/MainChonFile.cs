@@ -80,7 +80,7 @@ namespace QuanLyDT.Winform
             {
                 fileName = saveFileDialog1.FileName;
                 textBox1.Text = fileName;
-                DateTime start = new DateTime(2017, 1, 1);
+                DateTime start = new DateTime(2018, 11, 15);
                 int range = (DateTime.Today - start).Days;
        
                 Random a = new Random();

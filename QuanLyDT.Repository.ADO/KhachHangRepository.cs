@@ -73,6 +73,19 @@ namespace QuanLyDT.Repository.ADO
             return list;
         }
 
+        public List<KhachHang> TimKiemKHByMaSim(int info)
+        {
+
+            List<KhachHang> list = new List<KhachHang>();
+            DataTable table = null;
+            table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemKHByMaSim @ThongTin ", new object[] { info });
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new KhachHang(row));
+            }
+            return list;
+        }
         /// <summary>
         /// Cập nhật thông tin cho khach hang
         /// </summary>
