@@ -70,6 +70,7 @@ namespace QuanLyDT.Winform
                 cg.SoPhutSD = int.Parse(d.TotalMinutes.ToString());
                 libraryService.ThemCuocGoi(cg);
             }
+            this.Close();
         }
     }
 }
