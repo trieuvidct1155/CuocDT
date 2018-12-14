@@ -5,6 +5,7 @@ using QuanLyDT.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -323,9 +324,9 @@ namespace QuanLyDT.Winform
                 }
                 else
                 {
-                    dgvDanhSachKH.Rows.Clear();
-                    dgvDanhSachKH.Refresh();
-                    foreach (HoaDonThanhToan item in libraryService.TimKiemHDTT(cot, txtTimKiem.Text))
+                    dgvDanhSachHoaDonThanhToan.Rows.Clear();
+                    dgvDanhSachHoaDonThanhToan.Refresh();
+                    foreach (HoaDonThanhToan item in libraryService.TimKiemHDTT(cot, txtTimKiemThanhToan.Text))
                     {
                         dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaKH, item.MaHD, item.MaSim, item.TG_TaoHoaDon);
                     }
@@ -392,6 +393,20 @@ namespace QuanLyDT.Winform
                     }
                 LoadDanhSachLoaiCuoc();
             }
+        }
+
+        private void btnHuyKham_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.dgvDanhSachHoaDonThanhToan.SelectedRows[0];
+            int khachHang =(int)row.Cells[2].Value;
+            MainFormChiTietSuDung f = new MainFormChiTietSuDung(khachHang);
+            f.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MainChonFile f = new MainChonFile();
+            f.ShowDialog();          
         }
     }
 }

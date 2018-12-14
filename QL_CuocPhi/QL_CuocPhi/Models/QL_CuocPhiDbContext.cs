@@ -8,7 +8,7 @@ namespace QL_CuocPhi.Models
     public partial class QL_CuocPhiDbContext : DbContext
     {
         public QL_CuocPhiDbContext()
-            : base("name=QL_CuocPhiDbContext")
+            : base("name=QuanLyCuocDienThoai")
         {
         }
 

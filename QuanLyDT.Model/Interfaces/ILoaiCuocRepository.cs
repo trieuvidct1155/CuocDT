@@ -14,5 +14,6 @@ namespace QuanLyDT.Model.Interfaces
         bool ThemLoaiCuoc(LoaiCuoc loaiCuoc);
         bool UpdateLoaiCuoc(LoaiCuoc loaiCuoc);
         bool XoaCuoc(LoaiCuoc loaiCuoc);
+        List<CuocGoi> DanhSachCuocGoi(int id);
     }
 }

@@ -41,6 +41,14 @@ namespace QuanLyDT.Repository.ADO
             return row > 0;
         }
 
+        public bool ThemCuocGoi(CuocGoi cuocGoi)
+        {
+            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_TaoCuocGoi @MaSim ," +
+                                        " @TGBD , @TGKT , @KetThuc",
+                                        new object[] { cuocGoi.MaSim, cuocGoi.TG_BatDau, cuocGoi.TG_KetThuc, cuocGoi.SoPhutSD });
+            return row > 0;
+        }
+
         /// <summary>
         /// tìm kiếm hoa don thanh toan, sử dụng SP_TimKiemHDTT
         /// </summary>
@@ -54,12 +62,12 @@ namespace QuanLyDT.Repository.ADO
             if (col == "SoSim")
             {
                 info = "%" + info + "%";
-                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHDHTBySoSim @ThongTin ", new object[] { info });
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHDHTBySoSim @Text ", new object[] { info });
             }
             else
             {
                 info = "%" + info + "%";
-                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHDHTByTenKH @ThongTin", new object[] { info });
+                table = DataProvider.Instane.ExecuteReader(" EXEC  dbo.SP_TimKiemHDHTByTenKH @Text", new object[] { info });
             }
 
             foreach (DataRow row in table.Rows)

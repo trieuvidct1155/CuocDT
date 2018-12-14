@@ -12,6 +12,19 @@ namespace QuanLyDT.Repository.ADO
 {
     public class LoaiCuocRepository : ILoaiCuocRepository
     {
+        public List<CuocGoi> DanhSachCuocGoi(int id)
+        {
+            List<CuocGoi> list = new List<CuocGoi>();
+
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachCuocGoi @Id ", new object[] { id });
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new CuocGoi(row));
+            }
+            return list;
+        }
+
         /// <summary>
         /// lấy danh sách LoaiCuoc trong database
         /// </summary>

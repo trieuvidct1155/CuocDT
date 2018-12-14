@@ -100,6 +100,10 @@ namespace QuanLyDT.Services
         {
             return thanhToanRepository.TimKiemByMaKHHDTT(info);
         }
+        public List<CuocGoi> DanhSachCuocGoi(int info)
+        {
+            return loaiCuocRepository.DanhSachCuocGoi(info);
+        }
 
         public bool ThemHDTT(HoaDonThanhToan thanhToan)
         {
@@ -199,6 +203,12 @@ namespace QuanLyDT.Services
         }
 
         #endregion HoaDonDKServices
+
+
+        public bool ThemCuocGoi(CuocGoi cg)
+        {
+            return thanhToanRepository.ThemCuocGoi(cg);
+        }
 
     }
 }

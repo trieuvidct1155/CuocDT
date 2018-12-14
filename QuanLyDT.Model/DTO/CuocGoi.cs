@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyDT.Model.DTO
 {
-    class CuocGoi
+    public class CuocGoi
     {
         public CuocGoi(int maCG, int maSim, DateTime tgBD, DateTime tgKT, int soPhut)
         {
@@ -20,7 +20,6 @@ namespace QuanLyDT.Model.DTO
 
         public CuocGoi(DataRow row)
         {
-            MaCuocGoi = (int)row["MaCuocGoi"];
             MaSim = (int)row["MaSim"];
             TG_BatDau = (DateTime)row["TG_BatDau"];
             TG_KetThuc = (DateTime)row["TG_KetThuc"];

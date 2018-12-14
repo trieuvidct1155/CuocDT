@@ -59,7 +59,7 @@ namespace QuanLyDT.Winform
 
         private void button2_Click(object sender, EventArgs e)
         {           
-            masim = (string)dgvSim.SelectedRows[0].Cells[0].Value;
+            masim = dgvSim.SelectedRows[0].Cells[0].Value.ToString();
             this.Close();
         }
 

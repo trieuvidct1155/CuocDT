@@ -80,6 +80,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnEditCuoc = new System.Windows.Forms.Button();
             this.btnAddCuoc = new System.Windows.Forms.Button();
             this.dgvLoaiCuoc = new System.Windows.Forms.DataGridView();
@@ -87,7 +88,6 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -348,6 +348,7 @@
             this.button10.TabIndex = 45;
             this.button10.Text = "Import file log";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button2
             // 
@@ -375,6 +376,7 @@
             this.btnHuyKham.TabIndex = 4;
             this.btnHuyKham.Text = "Xem chi tiết sử dụng";
             this.btnHuyKham.UseVisualStyleBackColor = true;
+            this.btnHuyKham.Click += new System.EventHandler(this.btnHuyKham_Click);
             // 
             // dgvDanhSachHoaDonThanhToan
             // 
@@ -629,6 +631,17 @@
             this.tabPage4.Text = "Giá cước";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(333, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 25);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Xóa";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnEditCuoc
             // 
             this.btnEditCuoc.Location = new System.Drawing.Point(184, 16);
@@ -701,17 +714,6 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Width = 150;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(333, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 25);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Xóa";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainFormCuocDT
             // 
