@@ -107,5 +107,19 @@ namespace QuanLyDT.Repository.ADO
             }
             return list;
         }
+
+        public List<HoaDonThanhToan> TimKiemHDTTByMaSim(int masim)
+        {
+            List<HoaDonThanhToan> list = new List<HoaDonThanhToan>();
+            DataTable table = null;
+
+            table = DataProvider.Instane.ExecuteReader(" EXEC dbo.SP_TimKiemHDTTByMaSim @MaSim ", new object[] { masim });
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new HoaDonThanhToan(row));
+            }
+            return list;
+        }
     }
 }

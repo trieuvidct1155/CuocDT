@@ -210,5 +210,9 @@ namespace QuanLyDT.Services
             return thanhToanRepository.ThemCuocGoi(cg);
         }
 
+        public List<HoaDonThanhToan> TimKiemHDTTByMaSim(int masim)
+        {
+            return thanhToanRepository.TimKiemHDTTByMaSim(masim);
+        }
     }
 }

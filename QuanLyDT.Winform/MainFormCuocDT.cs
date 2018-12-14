@@ -429,11 +429,63 @@ namespace QuanLyDT.Winform
                 LoadDanhSachKH();
             }
         }
-
         private void btnCapNhatPhieuKham_Click(object sender, EventArgs e)
         {
-            FormMail f = new FormMail();
-            f.ShowDialog();
+            List<Sim> sims = libraryService.DanhSachSim();
+            int gia = 0;
+            foreach(Sim s in sims)
+            {
+                List<CuocGoi> cgs = libraryService.DanhSachCuocGoi(s.MaSim);
+                if(cgs.Count>0)
+                {
+                    foreach (CuocGoi cg in cgs)
+                    {
+                        gia = gia + TinhCuoc(cg.TG_BatDau, cg.TG_KetThuc, cg.SoPhutSD);
+                    }
+                }
+                if(libraryService.TimKiemHDTTByMaSim(s.MaSim).Count==1)
+                {
+                    HoaDonThanhToan hdtt = libraryService.TimKiemHDTTByMaSim(s.MaSim)[0];
+                    hdtt.ThanhTien = gia;
+                    hdtt.Status = true;
+                    libraryService.UpdateHDTT(hdtt);
+                }              
+            }
+            LoadDanhSachHDTT();
+        }
+
+        int TinhCuoc(DateTime TGBD, DateTime TGKT, int sophut)
+        {
+            DateTime d1 = new DateTime(TGBD.Year, TGBD.Month, TGBD.Day, 23, 0, 0);
+            DateTime d2 = new DateTime(TGBD.Year, TGBD.Month, TGBD.Day, 7, 0, 0);
+            TimeSpan sp1, sp2;
+            int giacuoc = 0, tmp1, tmp2;
+            if (TGBD.Hour >= 7 && TGBD.Hour < 23 && TGKT.Hour >= 7 && TGKT.Hour < 23)
+            {
+                giacuoc = sophut * 200;
+            }
+            else if ((TGBD.Hour > 22 || TGBD.Hour < 7) && (TGKT.Hour > 22 || TGKT.Hour < 7))
+            {
+                giacuoc = sophut * 150;
+            }
+            else if (TGBD.Hour >= 7 && TGBD.Hour <= 23)
+            {
+                sp1 = d1 - TGBD;
+                sp2 = TGKT - d1;
+                tmp1 = sp1.Hours * 60 + sp1.Minutes + 1;
+                tmp2 = sp2.Hours * 60 + sp2.Minutes;
+                giacuoc = tmp1 * 200 + tmp2 * 150;
+            }
+            else
+            {
+                sp1 = d2 - TGBD;
+                sp2 = TGKT - d2;
+                tmp1 = sp1.Hours * 60 + sp1.Minutes + 1;
+                tmp2 = sp2.Hours * 60 + sp2.Minutes;
+                giacuoc = tmp1 * 150 + tmp2 * 200;
+
+            }
+            return giacuoc;
         }
     }
 }
