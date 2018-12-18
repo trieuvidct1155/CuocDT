@@ -440,29 +440,38 @@ namespace QuanLyDT.Winform
             {
                 int gia = 0;
                 List<CuocGoi> cgs = libraryService.DanhSachCuocGoi(s.MaSim);
+                List<HoaDonThanhToan> hdtts = libraryService.DanhSachHDTT();
 
-
-                
-                cgs = cgs.Where(x => x.TG_BatDau == DateTime.Now.AddMonths(-1)).ToList<CuocGoi>();
-
-                if (cgs.Count>0)
+                hdtts = hdtts.Where(x => x.MaSim == s.MaSim).ToList();
+                hdtts = hdtts.Where(x => x.TG_TaoHoaDon > DateTime.Now.AddMonths(-1)).ToList();
+                if (hdtts == null || hdtts.Count == 0)
                 {
-                    foreach (CuocGoi cg in cgs)
-                    {
-                        gia = gia + TinhCuoc(cg.TG_BatDau, cg.TG_KetThuc, cg.SoPhutSD);
-                    }
-                }
+                    cgs = cgs.Where(x => x.TG_BatDau > DateTime.Now.AddMonths(-1)).ToList<CuocGoi>();
 
-                KhachHang kh = libraryService.TimKiemKHByMaSim(s.MaSim)[0];
-                HoaDonDK dk = libraryService.TimKiemHoaDonDK("MaKH", kh.MaKH.ToString())[0];
-                HoaDonThanhToan hdtt = new HoaDonThanhToan();
-                hdtt.MaKH = kh.MaKH;
-                hdtt.MaSim = s.MaSim;
-                hdtt.TG_TaoHoaDon = DateTime.Now;
-                hdtt.ThanhToan = true;
-                hdtt.CuocThueBao = dk.ChiPhi;
-                hdtt.ThanhTien = gia;
-                libraryService.ThemHDTT(hdtt);
+                    if (cgs.Count > 0)
+                    {
+                        foreach (CuocGoi cg in cgs)
+                        {
+                            gia = gia + TinhCuoc(cg.TG_BatDau, cg.TG_KetThuc, cg.SoPhutSD);
+                        }
+                    }
+
+                    KhachHang kh = libraryService.TimKiemKHByMaSim(s.MaSim)[0];
+                    HoaDonDK dk = libraryService.TimKiemHoaDonDK("MaKH", kh.MaKH.ToString())[0];
+                    HoaDonThanhToan hdtt = new HoaDonThanhToan();
+                    hdtt.MaKH = kh.MaKH;
+                    hdtt.MaSim = s.MaSim;
+                    hdtt.TG_TaoHoaDon = DateTime.Now;
+                    hdtt.ThanhToan = true;
+                    hdtt.CuocThueBao = dk.ChiPhi;
+                    hdtt.ThanhTien = gia;
+                    hdtt.Status = true;
+                    libraryService.ThemHDTT(hdtt);
+                }
+                else
+                {
+                    MessageBox.Show("Hóa đơn của Sim "+ s.SoSim +" trong tháng này đã được tạo!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             LoadDanhSachHDTT();
         }
@@ -499,6 +508,28 @@ namespace QuanLyDT.Winform
 
             }
             return giacuoc;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string thang = txtThang.Text;
+            string nam = txtNam.Text;
+            listHDTT = libraryService.DanhSachHDTT();
+
+            if (thang!="")
+            {
+                listHDTT = listHDTT.Where(x => x.TG_TaoHoaDon.Month == int.Parse(thang)).ToList();
+            }
+            if(nam!="")
+            {
+                listHDTT = listHDTT.Where(x => x.TG_TaoHoaDon.Year == int.Parse(nam)).ToList();
+            }
+            dgvDanhSachHoaDonThanhToan.Rows.Clear();
+            dgvDanhSachHoaDonThanhToan.Refresh();
+            foreach (HoaDonThanhToan item in listHDTT)
+            {
+                dgvDanhSachHoaDonThanhToan.Rows.Add(item.MaHD, item.MaKH, item.MaSim, item.CuocThueBao, item.TG_TaoHoaDon, item.ThanhToan, item.ThanhTien, item.Status);
+            }
         }
     }
 }
