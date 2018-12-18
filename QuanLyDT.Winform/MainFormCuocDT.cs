@@ -435,10 +435,10 @@ namespace QuanLyDT.Winform
             f.ShowDialog();
             List<Sim> sims = libraryService.DanhSachSim();
             sims = sims.Where(x => x.Status == true).ToList<Sim>();
-            int gia = 0;
+            
             foreach(Sim s in sims)
             {
-
+                int gia = 0;
                 List<CuocGoi> cgs = libraryService.DanhSachCuocGoi(s.MaSim);
 
 

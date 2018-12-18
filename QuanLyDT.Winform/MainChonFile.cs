@@ -58,8 +58,7 @@ namespace QuanLyDT.Winform
                 {
                     continue;
                 }
-                try
-                {
+          
                     string[] chuoi = lines[i].Split(new Char[] { ' ' });
                     string tgBD = chuoi[1] + " " + chuoi[2];
                     string tgKT = chuoi[3] + " " + chuoi[4];
@@ -71,11 +70,7 @@ namespace QuanLyDT.Winform
                     TimeSpan d = cg.TG_KetThuc.Subtract(cg.TG_BatDau);
                     cg.SoPhutSD = int.Parse(d.TotalMinutes.ToString());
                     libraryService.ThemCuocGoi(cg);
-                }
-                catch {}
-                {
-                    MessageBox.Show("Import file log không thành công !!", "Thông báo");
-                }
+                
                 
             }
             this.Close();
